@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B99F22A5B36D7B7C4DD644D5 /* Pods_Yu_Gi_Oh_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A7D901AFE149931FDF57D4 /* Pods_Yu_Gi_Oh_Project.framework */; };
+		EEF0D48C29A13E4200B2EA43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0D48B29A13E4200B2EA43 /* AppDelegate.swift */; };
+		EEF0D48E29A13E4200B2EA43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0D48D29A13E4200B2EA43 /* SceneDelegate.swift */; };
+		EEF0D49029A13E4200B2EA43 /* TitleScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0D48F29A13E4200B2EA43 /* TitleScreenViewController.swift */; };
+		EEF0D49529A13E4400B2EA43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEF0D49429A13E4400B2EA43 /* Assets.xcassets */; };
+		EEF0D49829A13E4400B2EA43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF0D49629A13E4400B2EA43 /* LaunchScreen.storyboard */; };
+		EEF0D4A229A1605800B2EA43 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0D4A129A1605800B2EA43 /* Constants.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		024D92BB717377F253E2B066 /* Pods-Yu-Gi-Oh-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yu-Gi-Oh-Project.debug.xcconfig"; path = "Target Support Files/Pods-Yu-Gi-Oh-Project/Pods-Yu-Gi-Oh-Project.debug.xcconfig"; sourceTree = "<group>"; };
+		3E4489D6F2B3A8A124B52073 /* Pods-Yu-Gi-Oh-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yu-Gi-Oh-Project.release.xcconfig"; path = "Target Support Files/Pods-Yu-Gi-Oh-Project/Pods-Yu-Gi-Oh-Project.release.xcconfig"; sourceTree = "<group>"; };
+		A1A7D901AFE149931FDF57D4 /* Pods_Yu_Gi_Oh_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yu_Gi_Oh_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEF0D48829A13E4200B2EA43 /* Yu-Gi-Oh-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yu-Gi-Oh-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEF0D48B29A13E4200B2EA43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EEF0D48D29A13E4200B2EA43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EEF0D48F29A13E4200B2EA43 /* TitleScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenViewController.swift; sourceTree = "<group>"; };
+		EEF0D49429A13E4400B2EA43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEF0D49729A13E4400B2EA43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EEF0D49929A13E4400B2EA43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEF0D4A129A1605800B2EA43 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EEF0D48529A13E4200B2EA43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B99F22A5B36D7B7C4DD644D5 /* Pods_Yu_Gi_Oh_Project.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C1FB9A04ADF0F5E4E3709C4B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				024D92BB717377F253E2B066 /* Pods-Yu-Gi-Oh-Project.debug.xcconfig */,
+				3E4489D6F2B3A8A124B52073 /* Pods-Yu-Gi-Oh-Project.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C95CACC561CD7044197E4DEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1A7D901AFE149931FDF57D4 /* Pods_Yu_Gi_Oh_Project.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EEF0D47F29A13E4200B2EA43 = {
+			isa = PBXGroup;
+			children = (
+				EEF0D48A29A13E4200B2EA43 /* Yu-Gi-Oh-Project */,
+				EEF0D48929A13E4200B2EA43 /* Products */,
+				C1FB9A04ADF0F5E4E3709C4B /* Pods */,
+				C95CACC561CD7044197E4DEC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EEF0D48929A13E4200B2EA43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEF0D48829A13E4200B2EA43 /* Yu-Gi-Oh-Project.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEF0D48A29A13E4200B2EA43 /* Yu-Gi-Oh-Project */ = {
+			isa = PBXGroup;
+			children = (
+				EEF0D48B29A13E4200B2EA43 /* AppDelegate.swift */,
+				EEF0D48D29A13E4200B2EA43 /* SceneDelegate.swift */,
+				EEF0D48F29A13E4200B2EA43 /* TitleScreenViewController.swift */,
+				EEF0D49429A13E4400B2EA43 /* Assets.xcassets */,
+				EEF0D49629A13E4400B2EA43 /* LaunchScreen.storyboard */,
+				EEF0D49929A13E4400B2EA43 /* Info.plist */,
+				EEF0D4A129A1605800B2EA43 /* Constants.swift */,
+			);
+			path = "Yu-Gi-Oh-Project";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EEF0D48729A13E4200B2EA43 /* Yu-Gi-Oh-Project */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEF0D49C29A13E4400B2EA43 /* Build configuration list for PBXNativeTarget "Yu-Gi-Oh-Project" */;
+			buildPhases = (
+				FAFC4726A0538C28EE358C6A /* [CP] Check Pods Manifest.lock */,
+				EEF0D48429A13E4200B2EA43 /* Sources */,
+				EEF0D48529A13E4200B2EA43 /* Frameworks */,
+				EEF0D48629A13E4200B2EA43 /* Resources */,
+				4D038233980B0AAA83A5BB57 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Yu-Gi-Oh-Project";
+			productName = "Yu-Gi-Oh-Project";
+			productReference = EEF0D48829A13E4200B2EA43 /* Yu-Gi-Oh-Project.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EEF0D48029A13E4200B2EA43 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					EEF0D48729A13E4200B2EA43 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = EEF0D48329A13E4200B2EA43 /* Build configuration list for PBXProject "Yu-Gi-Oh-Project" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EEF0D47F29A13E4200B2EA43;
+			productRefGroup = EEF0D48929A13E4200B2EA43 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EEF0D48729A13E4200B2EA43 /* Yu-Gi-Oh-Project */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EEF0D48629A13E4200B2EA43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEF0D49829A13E4400B2EA43 /* LaunchScreen.storyboard in Resources */,
+				EEF0D49529A13E4400B2EA43 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4D038233980B0AAA83A5BB57 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yu-Gi-Oh-Project/Pods-Yu-Gi-Oh-Project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yu-Gi-Oh-Project/Pods-Yu-Gi-Oh-Project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yu-Gi-Oh-Project/Pods-Yu-Gi-Oh-Project-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAFC4726A0538C28EE358C6A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Yu-Gi-Oh-Project-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EEF0D48429A13E4200B2EA43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEF0D49029A13E4200B2EA43 /* TitleScreenViewController.swift in Sources */,
+				EEF0D48C29A13E4200B2EA43 /* AppDelegate.swift in Sources */,
+				EEF0D48E29A13E4200B2EA43 /* SceneDelegate.swift in Sources */,
+				EEF0D4A229A1605800B2EA43 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EEF0D49629A13E4400B2EA43 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEF0D49729A13E4400B2EA43 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EEF0D49A29A13E4400B2EA43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EEF0D49B29A13E4400B2EA43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EEF0D49D29A13E4400B2EA43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 024D92BB717377F253E2B066 /* Pods-Yu-Gi-Oh-Project.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7Q2JD863XR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Yu-Gi-Oh-Project/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.card-games";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Luz.Emerson.Yu-Gi-Oh-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EEF0D49E29A13E4400B2EA43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E4489D6F2B3A8A124B52073 /* Pods-Yu-Gi-Oh-Project.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7Q2JD863XR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Yu-Gi-Oh-Project/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.card-games";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Luz.Emerson.Yu-Gi-Oh-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EEF0D48329A13E4200B2EA43 /* Build configuration list for PBXProject "Yu-Gi-Oh-Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEF0D49A29A13E4400B2EA43 /* Debug */,
+				EEF0D49B29A13E4400B2EA43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEF0D49C29A13E4400B2EA43 /* Build configuration list for PBXNativeTarget "Yu-Gi-Oh-Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEF0D49D29A13E4400B2EA43 /* Debug */,
+				EEF0D49E29A13E4400B2EA43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EEF0D48029A13E4200B2EA43 /* Project object */;
+}
