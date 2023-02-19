@@ -19,11 +19,12 @@ class Constants {
     
     struct ImageName {
         static let yuGiOhTitle = "Yu-Gi-Oh-Title"
+        static let launchScreen = "LaunchScreen"
     }
     
     struct TitleScreen {
-        static let touchLabelText = "Toque para continuar"
-        static let subtitleLabelText = "Duel Time"
+        static let touchLabelText = "Toque na tela para continuar"
+        static let subtitleLabelText = "É hora do duelo!"
         static let downloadAlertTitle = "Atenção!"
         static let downloadAlertMessage = "É necessário baixar os dados do jogo, certifique-se de que está usando wi-fi."
         static let titleActionCancel = "Cancelar"
