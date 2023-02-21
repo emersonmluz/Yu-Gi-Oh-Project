@@ -8,9 +8,12 @@
 import Foundation
 
 protocol TitleScreenPresenterInterface {
+    var interactorInterface: TitleScreenInteractorInterface? { get }
+    var interactorController: TitleScreenInteractor { get }
     func fetchData()
 }
 
 protocol TitleScreenInteractorInterface {
+    var api: ApiManager { get }
     func requestDownloadData()
 }

@@ -8,9 +8,9 @@
 import Foundation
 
 class TitleScreenInteractor: TitleScreenInteractorInterface {
-    var api = ApiManager()
+    let api = ApiManager()
     
-    func requestDownloadData() {
+    internal func requestDownloadData() {
         api.fetchData()
     }
 }

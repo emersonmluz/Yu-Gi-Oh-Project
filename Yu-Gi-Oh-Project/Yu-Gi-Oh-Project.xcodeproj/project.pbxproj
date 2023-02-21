@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B99F22A5B36D7B7C4DD644D5 /* Pods_Yu_Gi_Oh_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A7D901AFE149931FDF57D4 /* Pods_Yu_Gi_Oh_Project.framework */; };
 		EE93E5D129A543C800A4750F /* TitleScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D029A543C800A4750F /* TitleScreenProtocol.swift */; };
 		EE93E5D329A5449400A4750F /* TitleScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D229A5449400A4750F /* TitleScreenPresenter.swift */; };
 		EE93E5D529A5472B00A4750F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D429A5472B00A4750F /* ApiManager.swift */; };
@@ -23,7 +22,6 @@
 /* Begin PBXFileReference section */
 		024D92BB717377F253E2B066 /* Pods-Yu-Gi-Oh-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yu-Gi-Oh-Project.debug.xcconfig"; path = "Target Support Files/Pods-Yu-Gi-Oh-Project/Pods-Yu-Gi-Oh-Project.debug.xcconfig"; sourceTree = "<group>"; };
 		3E4489D6F2B3A8A124B52073 /* Pods-Yu-Gi-Oh-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yu-Gi-Oh-Project.release.xcconfig"; path = "Target Support Files/Pods-Yu-Gi-Oh-Project/Pods-Yu-Gi-Oh-Project.release.xcconfig"; sourceTree = "<group>"; };
-		A1A7D901AFE149931FDF57D4 /* Pods_Yu_Gi_Oh_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yu_Gi_Oh_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE93E5D029A543C800A4750F /* TitleScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenProtocol.swift; sourceTree = "<group>"; };
 		EE93E5D229A5449400A4750F /* TitleScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenPresenter.swift; sourceTree = "<group>"; };
 		EE93E5D429A5472B00A4750F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -43,7 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B99F22A5B36D7B7C4DD644D5 /* Pods_Yu_Gi_Oh_Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +59,6 @@
 		C95CACC561CD7044197E4DEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A1A7D901AFE149931FDF57D4 /* Pods_Yu_Gi_Oh_Project.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

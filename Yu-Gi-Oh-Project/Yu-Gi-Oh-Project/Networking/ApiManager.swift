@@ -8,7 +8,7 @@
 import Foundation
 
 class ApiManager {
-    func fetchData() {
+    internal func fetchData() {
         print("cheguei")
     }
 }

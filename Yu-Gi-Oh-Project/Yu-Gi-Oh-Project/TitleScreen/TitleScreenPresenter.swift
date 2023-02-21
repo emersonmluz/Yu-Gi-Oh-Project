@@ -9,9 +9,9 @@ import Foundation
 
 class TitleScreenPresenter: TitleScreenPresenterInterface {
     var interactorInterface: TitleScreenInteractorInterface?
-    var interactorController = TitleScreenInteractor()
+    let interactorController = TitleScreenInteractor()
     
-    func fetchData() {
+    internal func fetchData() {
         interactorInterface?.requestDownloadData()
     }
 }
