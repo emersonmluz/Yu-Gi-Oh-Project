@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B99F22A5B36D7B7C4DD644D5 /* Pods_Yu_Gi_Oh_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A7D901AFE149931FDF57D4 /* Pods_Yu_Gi_Oh_Project.framework */; };
+		EE93E5D129A543C800A4750F /* TitleScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D029A543C800A4750F /* TitleScreenProtocol.swift */; };
+		EE93E5D329A5449400A4750F /* TitleScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D229A5449400A4750F /* TitleScreenPresenter.swift */; };
+		EE93E5D529A5472B00A4750F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D429A5472B00A4750F /* ApiManager.swift */; };
+		EE93E5D729A54AD400A4750F /* TitleScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D629A54AD400A4750F /* TitleScreenInteractor.swift */; };
 		EEF0D48C29A13E4200B2EA43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0D48B29A13E4200B2EA43 /* AppDelegate.swift */; };
 		EEF0D48E29A13E4200B2EA43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0D48D29A13E4200B2EA43 /* SceneDelegate.swift */; };
 		EEF0D49029A13E4200B2EA43 /* TitleScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0D48F29A13E4200B2EA43 /* TitleScreenViewController.swift */; };
@@ -20,6 +24,10 @@
 		024D92BB717377F253E2B066 /* Pods-Yu-Gi-Oh-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yu-Gi-Oh-Project.debug.xcconfig"; path = "Target Support Files/Pods-Yu-Gi-Oh-Project/Pods-Yu-Gi-Oh-Project.debug.xcconfig"; sourceTree = "<group>"; };
 		3E4489D6F2B3A8A124B52073 /* Pods-Yu-Gi-Oh-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yu-Gi-Oh-Project.release.xcconfig"; path = "Target Support Files/Pods-Yu-Gi-Oh-Project/Pods-Yu-Gi-Oh-Project.release.xcconfig"; sourceTree = "<group>"; };
 		A1A7D901AFE149931FDF57D4 /* Pods_Yu_Gi_Oh_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yu_Gi_Oh_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE93E5D029A543C800A4750F /* TitleScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenProtocol.swift; sourceTree = "<group>"; };
+		EE93E5D229A5449400A4750F /* TitleScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenPresenter.swift; sourceTree = "<group>"; };
+		EE93E5D429A5472B00A4750F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		EE93E5D629A54AD400A4750F /* TitleScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenInteractor.swift; sourceTree = "<group>"; };
 		EEF0D48829A13E4200B2EA43 /* Yu-Gi-Oh-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yu-Gi-Oh-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF0D48B29A13E4200B2EA43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEF0D48D29A13E4200B2EA43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +67,57 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE93E5C629A5396000A4750F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				EE93E5C829A53A2800A4750F /* TitleScreen */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		EE93E5C729A5396B00A4750F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EE93E5C829A53A2800A4750F /* TitleScreen */ = {
+			isa = PBXGroup;
+			children = (
+				EE93E5D229A5449400A4750F /* TitleScreenPresenter.swift */,
+				EEF0D48F29A13E4200B2EA43 /* TitleScreenViewController.swift */,
+				EE93E5D029A543C800A4750F /* TitleScreenProtocol.swift */,
+				EE93E5D629A54AD400A4750F /* TitleScreenInteractor.swift */,
+			);
+			path = TitleScreen;
+			sourceTree = "<group>";
+		};
+		EE93E5C929A53A8300A4750F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EE93E5CA29A53A9600A4750F /* Networking */,
+				EE93E5CB29A53AA700A4750F /* Components */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		EE93E5CA29A53A9600A4750F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				EE93E5D429A5472B00A4750F /* ApiManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		EE93E5CB29A53AA700A4750F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EEF0D4A129A1605800B2EA43 /* Constants.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		EEF0D47F29A13E4200B2EA43 = {
 			isa = PBXGroup;
 			children = (
@@ -80,13 +139,14 @@
 		EEF0D48A29A13E4200B2EA43 /* Yu-Gi-Oh-Project */ = {
 			isa = PBXGroup;
 			children = (
+				EE93E5C929A53A8300A4750F /* Helper */,
+				EE93E5C729A5396B00A4750F /* Extensions */,
+				EE93E5C629A5396000A4750F /* Features */,
 				EEF0D48B29A13E4200B2EA43 /* AppDelegate.swift */,
 				EEF0D48D29A13E4200B2EA43 /* SceneDelegate.swift */,
-				EEF0D48F29A13E4200B2EA43 /* TitleScreenViewController.swift */,
-				EEF0D49429A13E4400B2EA43 /* Assets.xcassets */,
 				EEF0D49629A13E4400B2EA43 /* LaunchScreen.storyboard */,
+				EEF0D49429A13E4400B2EA43 /* Assets.xcassets */,
 				EEF0D49929A13E4400B2EA43 /* Info.plist */,
-				EEF0D4A129A1605800B2EA43 /* Constants.swift */,
 			);
 			path = "Yu-Gi-Oh-Project";
 			sourceTree = "<group>";
@@ -207,8 +267,12 @@
 			files = (
 				EEF0D49029A13E4200B2EA43 /* TitleScreenViewController.swift in Sources */,
 				EEF0D48C29A13E4200B2EA43 /* AppDelegate.swift in Sources */,
+				EE93E5D129A543C800A4750F /* TitleScreenProtocol.swift in Sources */,
+				EE93E5D729A54AD400A4750F /* TitleScreenInteractor.swift in Sources */,
+				EE93E5D529A5472B00A4750F /* ApiManager.swift in Sources */,
 				EEF0D48E29A13E4200B2EA43 /* SceneDelegate.swift in Sources */,
 				EEF0D4A229A1605800B2EA43 /* Constants.swift in Sources */,
+				EE93E5D329A5449400A4750F /* TitleScreenPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

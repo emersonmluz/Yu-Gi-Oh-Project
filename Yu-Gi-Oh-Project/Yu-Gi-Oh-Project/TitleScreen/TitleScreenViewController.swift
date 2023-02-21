@@ -9,7 +9,7 @@ import UIKit
 import Lottie
 
 class TitleScreenViewController: UIViewController {
-
+    
     private lazy var background: LottieAnimationView = {
         var animation = LottieAnimationView()
         animation.translatesAutoresizingMaskIntoConstraints = false
@@ -32,7 +32,7 @@ class TitleScreenViewController: UIViewController {
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = Constants.TitleScreen.subtitleLabelText
+        label.text = Constants.TitleScreenStrings.subtitleLabelText
         label.font = UIFont(name: Constants.FontName.impact, size: 40)
         label.numberOfLines = 1
         label.textAlignment = .center
@@ -45,7 +45,7 @@ class TitleScreenViewController: UIViewController {
     private lazy var touchLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = Constants.TitleScreen.touchLabelText
+        label.text = Constants.TitleScreenStrings.touchLabelText
         label.font = UIFont(name: Constants.FontName.arial, size: 25)
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -53,6 +53,9 @@ class TitleScreenViewController: UIViewController {
         label.alpha = 0.8
         return label
     }()
+    
+    private var presenterInterface: TitleScreenPresenterInterface?
+    private var presenterController = TitleScreenPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,10 +68,16 @@ class TitleScreenViewController: UIViewController {
     
     private func configUI() {
         view.backgroundColor = .white
+        assignDelegate()
         addComponents()
         configureComponents()
         configureConstraint()
         touchScreen()
+    }
+    
+    private func assignDelegate() {
+        presenterInterface = presenterController
+        presenterController.interactorInterface = presenterController.interactorController
     }
     
     private func addComponents() {
@@ -99,11 +108,11 @@ class TitleScreenViewController: UIViewController {
     }
     
     @objc private func downloadAlert(_ sender: UITapGestureRecognizer) {
-        let alert = UIAlertController(title: Constants.TitleScreen.downloadAlertTitle, message: Constants.TitleScreen.downloadAlertMessage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: Constants.TitleScreen.titleActionCancel, style: .cancel))
-        alert.addAction(UIAlertAction(title: Constants.TitleScreen.titleActionDefault, style: .default) {
+        let alert = UIAlertController(title: Constants.TitleScreenStrings.downloadAlertTitle, message: Constants.TitleScreenStrings.downloadAlertMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Constants.TitleScreenStrings.titleActionCancel, style: .cancel))
+        alert.addAction(UIAlertAction(title: Constants.TitleScreenStrings.titleActionDefault, style: .default) {
             _ in
-            print("Dowload realizado")
+            self.presenterInterface?.fetchData()
         })
         self.present(alert, animated: true)
     }

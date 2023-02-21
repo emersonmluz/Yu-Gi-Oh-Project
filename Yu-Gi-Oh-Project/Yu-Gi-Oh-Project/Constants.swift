@@ -22,7 +22,7 @@ class Constants {
         static let launchScreen = "LaunchScreen"
     }
     
-    struct TitleScreen {
+    struct TitleScreenStrings {
         static let touchLabelText = "Toque na tela para continuar"
         static let subtitleLabelText = "É hora do duelo!"
         static let downloadAlertTitle = "Atenção!"

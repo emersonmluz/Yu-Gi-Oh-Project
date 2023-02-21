@@ -21,22 +21,47 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carregando..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fA7-kb-aCV">
-                                <rect key="frame" x="20" y="67" width="335" height="39.333333333333343"/>
+                                <rect key="frame" x="20" y="708" width="335" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5Rh-au-RJi"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Yu-Gi-Oh-Title" translatesAutoresizingMaskIntoConstraints="NO" id="OM0-d7-cet">
+                                <rect key="frame" x="130" y="47" width="235" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OM0-d7-cet" secondAttribute="height" multiplier="47:16" id="4cP-at-pYE"/>
+                                    <constraint firstAttribute="height" constant="80" id="nnx-O3-3co"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="É hora do duelo!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXI-dq-tJz">
+                                <rect key="frame" x="153.33333333333337" y="107" width="183.66666666666663" height="36.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" systemColor="linkColor"/>
+                                <size key="shadowOffset" width="2" height="2"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Qee-3O-rkz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="18y-52-q8v"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OM0-d7-cet" secondAttribute="trailing" constant="10" id="67c-2P-XLQ"/>
+                            <constraint firstItem="tXI-dq-tJz" firstAttribute="top" secondItem="OM0-d7-cet" secondAttribute="bottom" constant="-20" id="77f-4g-K6N"/>
                             <constraint firstItem="fA7-kb-aCV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="82t-sU-ugN"/>
+                            <constraint firstItem="OM0-d7-cet" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bcb-Yi-BlS"/>
                             <constraint firstItem="Qee-3O-rkz" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="DTU-0i-dRp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qee-3O-rkz" secondAttribute="trailing" id="Pur-oV-euC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fA7-kb-aCV" secondAttribute="bottom" constant="20" id="Yqk-cu-eXc"/>
                             <constraint firstAttribute="trailing" secondItem="fA7-kb-aCV" secondAttribute="trailing" constant="20" id="ePA-a2-sXO"/>
                             <constraint firstAttribute="bottom" secondItem="Qee-3O-rkz" secondAttribute="bottom" id="pzg-OZ-pes"/>
-                            <constraint firstItem="fA7-kb-aCV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="yMl-kl-a93"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tXI-dq-tJz" secondAttribute="trailing" constant="38" id="yVh-Wq-X3S"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -47,6 +72,10 @@
     </scenes>
     <resources>
         <image name="LaunchScreen" width="210.33332824707031" height="220.33332824707031"/>
+        <image name="Yu-Gi-Oh-Title" width="200" height="70.666664123535156"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
