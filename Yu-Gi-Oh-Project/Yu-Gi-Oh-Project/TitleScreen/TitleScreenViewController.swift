@@ -127,8 +127,6 @@ class TitleScreenViewController: UIViewController {
         alert.addAction(UIAlertAction(title: Constants.TitleScreenStrings.titleActionDefault, style: .default) {
             _ in
             self.presenterInterface?.fetchData()
-            self.isDownloaded = true
-            self.registerTapGesture()
         })
         self.present(alert, animated: true)
     }
@@ -145,9 +143,13 @@ class TitleScreenViewController: UIViewController {
 extension TitleScreenViewController: TitleScreenViewModel {
     func extractData(data: [CardModel]) {
         cardList = data
+        self.isDownloaded = true
+        self.registerTapGesture()
     }
     
     func showError(error: NSError) {
-        print("Erro")
+        let alert = UIAlertController(title: Constants.TitleScreenStrings.alertErrorTitle, message: Constants.TitleScreenStrings.alertErrorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Constants.TitleScreenStrings.alertErrorActionTitle, style: .default))
+        self.present(alert, animated: true)
     }
 }

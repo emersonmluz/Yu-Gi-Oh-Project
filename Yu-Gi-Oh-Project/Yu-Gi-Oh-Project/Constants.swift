@@ -33,6 +33,9 @@ class Constants {
         static let downloadAlertMessage = "É necessário baixar os dados do jogo, certifique-se de que está usando wi-fi."
         static let titleActionCancel = "Cancelar"
         static let titleActionDefault = "Baixar"
+        static let alertErrorTitle = "Ops!"
+        static let alertErrorMessage = "Algo deu errado, tente novamente mais tarde."
+        static let alertErrorActionTitle = "Entendi"
     }
     
     struct NetWorking {
