@@ -17,13 +17,20 @@ class ApiManager {
         self.url = url
     }
     
-    internal func fetchData() {
+    internal func fetchData(completion: @escaping(_ cardList: CardList?, _ error: NSError?) -> Void) {
         alamofireManager.request(self.url).validate(statusCode: 200..<300).validate(contentType: ["application/json"]).response { response in
             switch response.result {
             case .success:
-                print("fazer decoder")
+                guard let jsonData = response.data, response.error == nil else {return}
+                do {
+                    let cardList = try JSONDecoder().decode(CardList.self, from: jsonData)
+                    completion(cardList, nil)
+                } catch let error as NSError {
+                    completion(nil, error)
+                }
             case .failure:
-                print("tratar error")
+                guard let error = response.error as? NSError else {return}
+                completion(nil, error)
             }
         }
     }

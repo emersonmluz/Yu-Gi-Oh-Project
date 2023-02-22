@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct CardList {
+struct CardList: Decodable {
     private var data: [CardModel]
 }

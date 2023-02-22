@@ -8,9 +8,12 @@
 import Foundation
 
 class TitleScreenInteractor: TitleScreenInteractorInterface {
-    let api = ApiManager()
+    let api = ApiManager(url: Constants.NetWorking.urlCardList)
     
     internal func requestDownloadData() {
-        api.fetchData()
+        api.fetchData() { list, error  in
+            print(list)
+            print(error)
+        }
     }
 }

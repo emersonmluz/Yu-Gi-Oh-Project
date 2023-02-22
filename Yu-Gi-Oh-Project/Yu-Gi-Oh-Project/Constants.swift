@@ -34,4 +34,8 @@ class Constants {
         static let titleActionCancel = "Cancelar"
         static let titleActionDefault = "Baixar"
     }
+    
+    struct NetWorking {
+        static let urlCardList = "https://db.ygoprodeck.com/api/v7/cardinfo.php?format=Speed%20Duel"
+    }
 }
