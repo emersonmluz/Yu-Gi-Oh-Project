@@ -55,7 +55,8 @@ class TitleScreenViewController: UIViewController {
     }()
     
     private var presenterInterface: TitleScreenPresenterInterface?
-    private var presenterController = TitleScreenPresenter()
+    private let presenterController = TitleScreenPresenter()
+    private var isDownloaded: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,19 +108,34 @@ class TitleScreenViewController: UIViewController {
         ])
     }
     
+    private func addTapGesture() {
+        if isDownloaded == false {
+            let touch = UITapGestureRecognizer(target: self, action: #selector(downloadAlert(_:)))
+            view.addGestureRecognizer(touch)
+        } else {
+            let touch = UITapGestureRecognizer(target: self, action: #selector(nextScreen(_:)))
+            view.addGestureRecognizer(touch)
+        }
+    }
+    
     @objc private func downloadAlert(_ sender: UITapGestureRecognizer) {
         let alert = UIAlertController(title: Constants.TitleScreenStrings.downloadAlertTitle, message: Constants.TitleScreenStrings.downloadAlertMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: Constants.TitleScreenStrings.titleActionCancel, style: .cancel))
         alert.addAction(UIAlertAction(title: Constants.TitleScreenStrings.titleActionDefault, style: .default) {
             _ in
             self.presenterInterface?.fetchData()
+            self.isDownloaded = true
+            self.touchScreen()
         })
         self.present(alert, animated: true)
     }
     
+    @objc private func nextScreen(_ sender: UITapGestureRecognizer) {
+        print("para próxima tela")
+    }
+    
     private func touchScreen() {
-        let touch = UITapGestureRecognizer(target: self, action: #selector(downloadAlert(_:)))
-        view.addGestureRecognizer(touch)
+        addTapGesture()
     }
 }
 

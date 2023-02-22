@@ -12,8 +12,9 @@ class TitleScreenInteractor: TitleScreenInteractorInterface {
     
     internal func requestDownloadData() {
         api.fetchData() { list, error  in
-            print(list)
-            print(error)
+            for card in list!.data {
+                print(card.name)
+            }
         }
     }
 }

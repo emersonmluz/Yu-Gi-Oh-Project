@@ -8,17 +8,17 @@
 import Foundation
 
 struct CardModel: Decodable {
-    private let id: Int
-    private let name: String
-    private let type: String
-    private let frameType: String
-    private let description: String
-    private let atk: Int?
-    private let def: Int?
-    private let level: Int?
-    private let style: String
-    private let attribute: String?
-    private let images: [CardImages]
+    var id: Int
+    var name: String
+    var type: String
+    var frameType: String
+    var description: String
+    var atk: Int?
+    var def: Int?
+    var level: Int?
+    var style: String
+    var attribute: String?
+    var images: [CardImages]
     
     enum CodingKeys: String, CodingKey {
         case id
