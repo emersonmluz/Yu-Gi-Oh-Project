@@ -73,7 +73,7 @@ class TitleScreenViewController: UIViewController {
         addComponents()
         configureComponents()
         configureConstraint()
-        touchScreen()
+        registerTapGesture()
     }
     
     private func assignDelegate() {
@@ -113,7 +113,7 @@ class TitleScreenViewController: UIViewController {
             let touch = UITapGestureRecognizer(target: self, action: #selector(downloadAlert(_:)))
             view.addGestureRecognizer(touch)
         } else {
-            let touch = UITapGestureRecognizer(target: self, action: #selector(nextScreen(_:)))
+            let touch = UITapGestureRecognizer(target: self, action: #selector(navigateToHomePage(_:)))
             view.addGestureRecognizer(touch)
         }
     }
@@ -125,16 +125,16 @@ class TitleScreenViewController: UIViewController {
             _ in
             self.presenterInterface?.fetchData()
             self.isDownloaded = true
-            self.touchScreen()
+            self.registerTapGesture()
         })
         self.present(alert, animated: true)
     }
     
-    @objc private func nextScreen(_ sender: UITapGestureRecognizer) {
+    @objc private func navigateToHomePage(_ sender: UITapGestureRecognizer) {
         print("para próxima tela")
     }
     
-    private func touchScreen() {
+    private func registerTapGesture() {
         addTapGesture()
     }
 }
