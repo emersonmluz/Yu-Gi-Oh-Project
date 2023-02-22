@@ -6,9 +6,25 @@
 //
 
 import Foundation
+import Alamofire
 
 class ApiManager {
+    
+    private let alamofireManager = Alamofire.Session()
+    private var url: String = ""
+    
+    init(url: String) {
+        self.url = url
+    }
+    
     internal func fetchData() {
-        print("cheguei")
+        alamofireManager.request(self.url).validate(statusCode: 200..<300).validate(contentType: ["application/json"]).response { response in
+            switch response.result {
+            case .success:
+                print("fazer decoder")
+            case .failure:
+                print("tratar error")
+            }
+        }
     }
 }
