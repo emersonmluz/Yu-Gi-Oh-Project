@@ -18,7 +18,9 @@ struct CardModel: Decodable {
     private let level: Int?
     private let style: String
     private let attribute: String?
+    private let sets: [CardSets]
     private let images: [CardImages]
+    private let prices: [CardPrices]
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -31,6 +33,8 @@ struct CardModel: Decodable {
         case level
         case style = "race"
         case attribute
+        case sets = "card_sets"
         case images = "card_images"
+        case prices = "card_prices"
     }
 }
