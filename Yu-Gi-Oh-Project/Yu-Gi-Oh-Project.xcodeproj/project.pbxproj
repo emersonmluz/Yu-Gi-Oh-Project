@@ -87,9 +87,9 @@
 		EE93E5C829A53A2800A4750F /* TitleScreen */ = {
 			isa = PBXGroup;
 			children = (
-				EE93E5D629A54AD400A4750F /* TitleScreenInteractor.swift */,
-				EE93E5D229A5449400A4750F /* TitleScreenPresenter.swift */,
 				EEF0D48F29A13E4200B2EA43 /* TitleScreenViewController.swift */,
+				EE93E5D229A5449400A4750F /* TitleScreenPresenter.swift */,
+				EE93E5D629A54AD400A4750F /* TitleScreenInteractor.swift */,
 				EE93E5D029A543C800A4750F /* TitleScreenProtocol.swift */,
 			);
 			path = TitleScreen;

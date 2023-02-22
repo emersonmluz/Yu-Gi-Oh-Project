@@ -8,13 +8,12 @@
 import Foundation
 
 class TitleScreenInteractor: TitleScreenInteractorInterface {
-    let api = ApiManager(url: Constants.NetWorking.urlCardList)
+    var api = ApiManager(url: Constants.NetWorking.urlCardList)
+    weak var apiOutput: TitleScreenInteractorOutput?
     
     internal func requestDownloadData() {
         api.fetchData() { list, error  in
-            for card in list!.data {
-                print(card.name)
-            }
+            self.apiOutput?.fetchFinished(output: list, error: error)
         }
     }
 }

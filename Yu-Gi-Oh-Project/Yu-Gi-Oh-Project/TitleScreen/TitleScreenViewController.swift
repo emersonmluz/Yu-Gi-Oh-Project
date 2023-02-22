@@ -57,6 +57,7 @@ class TitleScreenViewController: UIViewController {
     private var presenterInterface: TitleScreenPresenterInterface?
     private let presenterController = TitleScreenPresenter()
     private var isDownloaded: Bool = false
+    private var cardList: [CardModel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +80,8 @@ class TitleScreenViewController: UIViewController {
     private func assignDelegate() {
         presenterInterface = presenterController
         presenterController.interactorInterface = presenterController.interactorController
+        presenterController.interactorController.apiOutput = presenterController
+        presenterController.viewModel = self
     }
     
     private func addComponents() {
@@ -139,3 +142,12 @@ class TitleScreenViewController: UIViewController {
     }
 }
 
+extension TitleScreenViewController: TitleScreenViewModel {
+    func extractData(data: [CardModel]) {
+        cardList = data
+    }
+    
+    func showError(error: NSError) {
+        print("Erro")
+    }
+}
