@@ -22,6 +22,10 @@ class Constants {
         static let launchScreen = "LaunchScreen"
     }
     
+    struct SystemImageName {
+        static let arrowShapeLeftFill = "arrowshape.left.fill"
+    }
+    
     struct TitleScreenStrings {
         static let touchLabelText = "Toque na tela para continuar"
         static let subtitleLabelText = "É hora do duelo!"

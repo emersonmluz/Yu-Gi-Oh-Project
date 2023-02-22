@@ -18,7 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = TitleScreenViewController()
+        
+        let rootViewController = TitleScreenViewController()
+        let navigator = UINavigationController(rootViewController: rootViewController)
+
+        let backImage = UIImage(systemName: Constants.SystemImageName.arrowShapeLeftFill)
+        navigator.navigationBar.backIndicatorImage = backImage
+        navigator.navigationBar.backIndicatorTransitionMaskImage = backImage
+        UIBarButtonItem.appearance().tintColor = .link
+        
+        window?.rootViewController = navigator
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
