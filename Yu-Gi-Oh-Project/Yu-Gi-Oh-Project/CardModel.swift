@@ -5,7 +5,7 @@
 //  Created by Émerson M Luz on 22/02/23.
 //
 
-import Foundation
+import UIKit
 
 struct CardModel: Decodable {
     var id: Int

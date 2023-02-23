@@ -16,6 +16,7 @@
 		EEA27BAA29A6667E001F0D71 /* CardImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA27BA929A6667E001F0D71 /* CardImages.swift */; };
 		EEA27BB429A7EE74001F0D71 /* DownloadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA27BB329A7EE74001F0D71 /* DownloadingView.swift */; };
 		EEA27BB629A7F69B001F0D71 /* LayoutTitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA27BB529A7F69B001F0D71 /* LayoutTitleScreen.swift */; };
+		EEA27BB829A81134001F0D71 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA27BB729A81134001F0D71 /* ImageView.swift */; };
 		EEF0D48C29A13E4200B2EA43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0D48B29A13E4200B2EA43 /* AppDelegate.swift */; };
 		EEF0D48E29A13E4200B2EA43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0D48D29A13E4200B2EA43 /* SceneDelegate.swift */; };
 		EEF0D49029A13E4200B2EA43 /* TitleScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0D48F29A13E4200B2EA43 /* TitleScreenViewController.swift */; };
@@ -36,6 +37,7 @@
 		EEA27BA929A6667E001F0D71 /* CardImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImages.swift; sourceTree = "<group>"; };
 		EEA27BB329A7EE74001F0D71 /* DownloadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadingView.swift; sourceTree = "<group>"; };
 		EEA27BB529A7F69B001F0D71 /* LayoutTitleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTitleScreen.swift; sourceTree = "<group>"; };
+		EEA27BB729A81134001F0D71 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		EEF0D48829A13E4200B2EA43 /* Yu-Gi-Oh-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yu-Gi-Oh-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF0D48B29A13E4200B2EA43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEF0D48D29A13E4200B2EA43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		EE93E5C729A5396B00A4750F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				EEA27BB729A81134001F0D71 /* ImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				EEF0D48E29A13E4200B2EA43 /* SceneDelegate.swift in Sources */,
 				EEF0D4A229A1605800B2EA43 /* Constants.swift in Sources */,
 				EE93E5D329A5449400A4750F /* TitleScreenPresenter.swift in Sources */,
+				EEA27BB829A81134001F0D71 /* ImageView.swift in Sources */,
 				EEA27BA829A66349001F0D71 /* CardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
