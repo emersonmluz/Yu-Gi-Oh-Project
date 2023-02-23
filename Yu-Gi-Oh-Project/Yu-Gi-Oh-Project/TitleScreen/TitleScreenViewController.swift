@@ -23,7 +23,7 @@ class TitleScreenViewController: UIViewController {
     
     private var presenterInterface: TitleScreenPresenterInterface?
     private let presenterController = TitleScreenPresenter()
-    private var isDownloaded: Bool = false
+    private var isDownloaded: Bool = false {didSet {registerTapGestureNavigation()}}
     private var cardList: [CardModel]?
     
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class TitleScreenViewController: UIViewController {
         addComponents()
         setConstraint()
         configureComponents()
-        registerTapGesture()
+        registerTapGestureDownloadAlert()
     }
     
     private func assignDelegate() {
@@ -74,18 +74,14 @@ class TitleScreenViewController: UIViewController {
         ])
     }
     
-    private func registerTapGesture() {
-        addTapGesture()
+    private func registerTapGestureDownloadAlert() {
+        let touch = UITapGestureRecognizer(target: self, action: #selector(downloadAlert(_:)))
+        view.addGestureRecognizer(touch)
     }
     
-    private func addTapGesture() {
-        if isDownloaded == false {
-            let touch = UITapGestureRecognizer(target: self, action: #selector(downloadAlert(_:)))
-            view.addGestureRecognizer(touch)
-        } else {
-            let touch = UITapGestureRecognizer(target: self, action: #selector(navigateToHomePage(_:)))
-            view.addGestureRecognizer(touch)
-        }
+    private func registerTapGestureNavigation() {
+        let touch = UITapGestureRecognizer(target: self, action: #selector(navigateToHomePage(_:)))
+        view.addGestureRecognizer(touch)
     }
     
     @objc private func downloadAlert(_ sender: UITapGestureRecognizer) {
@@ -121,7 +117,6 @@ extension TitleScreenViewController: TitleScreenViewModel {
     func extractData(data: [CardModel]) {
         cardList = data
         isDownloaded = true
-        registerTapGesture()
         downloadingView.isHidden = true
         let alert = showAlert(title: Constants.TitleScreenStrings.alertSuccessTitle,
                  message: Constants.TitleScreenStrings.alertSuccessMessage,
