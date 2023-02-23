@@ -54,34 +54,10 @@ class TitleScreenViewController: UIViewController {
         return label
     }()
     
-    private lazy var dowloadingView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.isHidden = true
+    private lazy var downloadingView: DownloadingView = {
+        let view = DownloadingView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
-    }()
-    
-    private lazy var downloadingAnimation: LottieAnimationView = {
-        var animation = LottieAnimationView()
-        animation = .init(name: Constants.AnimationName.downloadingAnimation)
-        animation.contentMode = .scaleAspectFit
-        animation.loopMode = .loop
-        animation.animationSpeed = 0.8
-        animation.play()
-        animation.translatesAutoresizingMaskIntoConstraints = false
-        return animation
-    }()
-    
-    private lazy var downloadingLabel: UILabel = {
-        let label = UILabel()
-        label.text = Constants.TitleScreenStrings.downloadingText
-        label.font = UIFont(name: Constants.FontName.arial, size: 20)
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
     }()
     
     private var presenterInterface: TitleScreenPresenterInterface?
@@ -103,7 +79,7 @@ class TitleScreenViewController: UIViewController {
         assignDelegate()
         addComponents()
         configureComponents()
-        configureConstraint()
+        setConstraint()
         registerTapGesture()
     }
     
@@ -119,16 +95,14 @@ class TitleScreenViewController: UIViewController {
         view.addSubview(titleImageView)
         view.addSubview(subtitleLabel)
         view.addSubview(touchLabel)
-        view.addSubview(dowloadingView)
-        dowloadingView.addSubview(downloadingAnimation)
-        dowloadingView.addSubview(downloadingLabel)
+        view.addSubview(downloadingView)
     }
     
     private func configureComponents() {
         background.frame = view.frame
     }
     
-    private func configureConstraint() {
+    private func setConstraint() {
         NSLayoutConstraint.activate([
             titleImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
             titleImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
@@ -142,19 +116,10 @@ class TitleScreenViewController: UIViewController {
             touchLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
             touchLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80),
             
-            dowloadingView.topAnchor.constraint(equalTo: view.topAnchor),
-            dowloadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            dowloadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            dowloadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
-            downloadingAnimation.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100),
-            downloadingAnimation.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            downloadingAnimation.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            downloadingAnimation.heightAnchor.constraint(equalToConstant: 150),
-            
-            downloadingLabel.topAnchor.constraint(equalTo: downloadingAnimation.bottomAnchor, constant: 20),
-            downloadingLabel.leadingAnchor.constraint(equalTo: dowloadingView.leadingAnchor, constant: 20),
-            downloadingLabel.trailingAnchor.constraint(equalTo: dowloadingView.trailingAnchor, constant: -20)
+            downloadingView.topAnchor.constraint(equalTo: view.topAnchor),
+            downloadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            downloadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            downloadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
@@ -176,7 +141,7 @@ class TitleScreenViewController: UIViewController {
                                    actionStyle: .destructive)
         alert.addAction(UIAlertAction(title: Constants.TitleScreenStrings.titleActionDefault, style: .default) {
             _ in
-            self.dowloadingView.isHidden = false
+            self.downloadingView.isHidden = false
             self.presenterInterface?.fetchData()
         })
         self.present(alert, animated: true)
@@ -206,7 +171,7 @@ extension TitleScreenViewController: TitleScreenViewModel {
         cardList = data
         isDownloaded = true
         registerTapGesture()
-        dowloadingView.isHidden = true
+        downloadingView.isHidden = true
         let alert = showAlert(title: Constants.TitleScreenStrings.alertSuccessTitle,
                  message: Constants.TitleScreenStrings.alertSuccessMessage,
                  preferredStyle: .alert,
@@ -216,7 +181,7 @@ extension TitleScreenViewController: TitleScreenViewModel {
     }
     
     func showError(error: NSError) {
-        dowloadingView.isHidden = true
+        downloadingView.isHidden = true
         let alert = showAlert(title: Constants.TitleScreenStrings.alertErrorTitle,
                  message: Constants.TitleScreenStrings.alertErrorMessage,
                  preferredStyle: .alert,
