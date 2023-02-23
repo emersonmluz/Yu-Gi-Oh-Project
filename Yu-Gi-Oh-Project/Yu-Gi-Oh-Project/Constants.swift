@@ -14,7 +14,8 @@ class Constants {
     }
     
     struct AnimationName {
-        static let TitleScreenBackground = "TitleScreenBackground"
+        static let titleScreenBackground = "TitleScreenBackground"
+        static let downloadingAnimation = "DownloadingAnimation"
     }
     
     struct ImageName {
@@ -36,6 +37,10 @@ class Constants {
         static let alertErrorTitle = "Ops!"
         static let alertErrorMessage = "Algo deu errado, tente novamente mais tarde."
         static let alertErrorActionTitle = "Entendi"
+        static let downloadingText = "Baixando arquivos... aguarde! \nIsso pode demorar alguns minutos."
+        static let alertSuccessTitle = "Tudo pronto!"
+        static let alertSuccessMessage = "Download fnalizado com sucesso."
+        static let alertSuccessActionTitle = "Continuar"
     }
     
     struct NetWorking {

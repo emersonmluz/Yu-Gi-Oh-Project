@@ -14,7 +14,6 @@
 		EEA27BA629A66291001F0D71 /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA27BA529A66291001F0D71 /* CardList.swift */; };
 		EEA27BA829A66349001F0D71 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA27BA729A66349001F0D71 /* CardModel.swift */; };
 		EEA27BAA29A6667E001F0D71 /* CardImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA27BA929A6667E001F0D71 /* CardImages.swift */; };
-		EEA27BB229A784A9001F0D71 /* DownloadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA27BB129A784A9001F0D71 /* DownloadingView.swift */; };
 		EEF0D48C29A13E4200B2EA43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0D48B29A13E4200B2EA43 /* AppDelegate.swift */; };
 		EEF0D48E29A13E4200B2EA43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0D48D29A13E4200B2EA43 /* SceneDelegate.swift */; };
 		EEF0D49029A13E4200B2EA43 /* TitleScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0D48F29A13E4200B2EA43 /* TitleScreenViewController.swift */; };
@@ -33,7 +32,6 @@
 		EEA27BA529A66291001F0D71 /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
 		EEA27BA729A66349001F0D71 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		EEA27BA929A6667E001F0D71 /* CardImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImages.swift; sourceTree = "<group>"; };
-		EEA27BB129A784A9001F0D71 /* DownloadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadingView.swift; sourceTree = "<group>"; };
 		EEF0D48829A13E4200B2EA43 /* Yu-Gi-Oh-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yu-Gi-Oh-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF0D48B29A13E4200B2EA43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEF0D48D29A13E4200B2EA43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				EEF0D4A129A1605800B2EA43 /* Constants.swift */,
-				EEA27BB129A784A9001F0D71 /* DownloadingView.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -282,7 +279,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEF0D49029A13E4200B2EA43 /* TitleScreenViewController.swift in Sources */,
-				EEA27BB229A784A9001F0D71 /* DownloadingView.swift in Sources */,
 				EEA27BAA29A6667E001F0D71 /* CardImages.swift in Sources */,
 				EEF0D48C29A13E4200B2EA43 /* AppDelegate.swift in Sources */,
 				EE93E5D129A543C800A4750F /* TitleScreenProtocol.swift in Sources */,
