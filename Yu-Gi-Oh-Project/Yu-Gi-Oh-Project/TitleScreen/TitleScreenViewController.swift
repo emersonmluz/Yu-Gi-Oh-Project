@@ -20,6 +20,7 @@ class TitleScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
+        dataBase.loadData()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -107,6 +108,9 @@ class TitleScreenViewController: UIViewController {
 extension TitleScreenViewController: TitleScreenViewModel {
     func extractData(data: [CardModel]) {
         cardList = data
+        for card in cardList! {
+            dataBase.save(cardModel: card)
+        }
         isDownloaded = true
         downloadingView.isHidden = true
         let alert = showAlert(title: Constants.TitleScreenStrings.alertSuccessTitle,

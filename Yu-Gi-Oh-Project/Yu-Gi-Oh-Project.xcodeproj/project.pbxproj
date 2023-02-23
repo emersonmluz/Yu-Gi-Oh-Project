@@ -17,6 +17,8 @@
 		EEA27BB429A7EE74001F0D71 /* DownloadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA27BB329A7EE74001F0D71 /* DownloadingView.swift */; };
 		EEA27BB629A7F69B001F0D71 /* LayoutTitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA27BB529A7F69B001F0D71 /* LayoutTitleScreen.swift */; };
 		EEA27BB829A81134001F0D71 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA27BB729A81134001F0D71 /* ImageView.swift */; };
+		EEA27BBE29A81FD1001F0D71 /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEA27BBC29A81FD1001F0D71 /* DataBase.xcdatamodeld */; };
+		EEA27BC129A82123001F0D71 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA27BC029A82123001F0D71 /* DataBaseManager.swift */; };
 		EEF0D48C29A13E4200B2EA43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0D48B29A13E4200B2EA43 /* AppDelegate.swift */; };
 		EEF0D48E29A13E4200B2EA43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0D48D29A13E4200B2EA43 /* SceneDelegate.swift */; };
 		EEF0D49029A13E4200B2EA43 /* TitleScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF0D48F29A13E4200B2EA43 /* TitleScreenViewController.swift */; };
@@ -38,6 +40,8 @@
 		EEA27BB329A7EE74001F0D71 /* DownloadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadingView.swift; sourceTree = "<group>"; };
 		EEA27BB529A7F69B001F0D71 /* LayoutTitleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTitleScreen.swift; sourceTree = "<group>"; };
 		EEA27BB729A81134001F0D71 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		EEA27BBD29A81FD1001F0D71 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
+		EEA27BC029A82123001F0D71 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		EEF0D48829A13E4200B2EA43 /* Yu-Gi-Oh-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yu-Gi-Oh-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF0D48B29A13E4200B2EA43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEF0D48D29A13E4200B2EA43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 			children = (
 				EEA27BA429A661EF001F0D71 /* Models */,
 				EE93E5CA29A53A9600A4750F /* Networking */,
+				EEA27BBF29A820F8001F0D71 /* DataBase */,
 				EE93E5CB29A53AA700A4750F /* Components */,
 				EEF0D4A129A1605800B2EA43 /* Constants.swift */,
 			);
@@ -140,6 +145,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		EEA27BBF29A820F8001F0D71 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				EEA27BC029A82123001F0D71 /* DataBaseManager.swift */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
 		EEF0D47F29A13E4200B2EA43 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +182,7 @@
 				EEF0D49629A13E4400B2EA43 /* LaunchScreen.storyboard */,
 				EEF0D49429A13E4400B2EA43 /* Assets.xcassets */,
 				EEF0D49929A13E4400B2EA43 /* Info.plist */,
+				EEA27BBC29A81FD1001F0D71 /* DataBase.xcdatamodeld */,
 			);
 			path = "Yu-Gi-Oh-Project";
 			sourceTree = "<group>";
@@ -287,8 +301,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEA27BC129A82123001F0D71 /* DataBaseManager.swift in Sources */,
 				EEF0D49029A13E4200B2EA43 /* TitleScreenViewController.swift in Sources */,
 				EEA27BB429A7EE74001F0D71 /* DownloadingView.swift in Sources */,
+				EEA27BBE29A81FD1001F0D71 /* DataBase.xcdatamodeld in Sources */,
 				EEA27BAA29A6667E001F0D71 /* CardImages.swift in Sources */,
 				EEF0D48C29A13E4200B2EA43 /* AppDelegate.swift in Sources */,
 				EE93E5D129A543C800A4750F /* TitleScreenProtocol.swift in Sources */,
@@ -518,6 +534,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EEA27BBC29A81FD1001F0D71 /* DataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EEA27BBD29A81FD1001F0D71 /* DataBase.xcdatamodel */,
+			);
+			currentVersion = EEA27BBD29A81FD1001F0D71 /* DataBase.xcdatamodel */;
+			path = DataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EEF0D48029A13E4200B2EA43 /* Project object */;
 }
