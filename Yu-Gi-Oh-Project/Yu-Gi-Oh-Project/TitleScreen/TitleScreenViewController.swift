@@ -9,49 +9,10 @@ import UIKit
 import Lottie
 
 class TitleScreenViewController: UIViewController {
-    
-    private lazy var background: LottieAnimationView = {
-        var animation = LottieAnimationView()
-        animation.translatesAutoresizingMaskIntoConstraints = false
-        animation = .init(name: Constants.AnimationName.titleScreenBackground)
-        animation.contentMode = .scaleToFill
-        animation.loopMode = .loop
-        animation.animationSpeed = 0.5
-        animation.play()
-        return animation
-    }()
-    
-    private lazy var titleImageView: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: Constants.ImageName.yuGiOhTitle)
-        image.contentMode = .scaleAspectFit
-        return image
-    }()
-    
-    private lazy var subtitleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = Constants.TitleScreenStrings.subtitleLabelText
-        label.font = UIFont(name: Constants.FontName.impact, size: 40)
-        label.numberOfLines = 1
-        label.textAlignment = .center
-        label.textColor = .white
-        label.shadowOffset = CGSize(width: 3, height: 3)
-        label.shadowColor = .link
-        return label
-    }()
-    
-    private lazy var touchLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = Constants.TitleScreenStrings.touchLabelText
-        label.font = UIFont(name: Constants.FontName.arial, size: 25)
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.textColor = .white
-        label.alpha = 0.8
-        return label
+    private lazy var layoutView: LayoutTitleScreen = {
+        let layout = LayoutTitleScreen()
+        layout.translatesAutoresizingMaskIntoConstraints = false
+        return layout
     }()
     
     private lazy var downloadingView: DownloadingView = {
@@ -78,8 +39,8 @@ class TitleScreenViewController: UIViewController {
         view.backgroundColor = .white
         assignDelegate()
         addComponents()
-        configureComponents()
         setConstraint()
+        configureComponents()
         registerTapGesture()
     }
     
@@ -91,36 +52,30 @@ class TitleScreenViewController: UIViewController {
     }
     
     private func addComponents() {
-        view.addSubview(background)
-        view.addSubview(titleImageView)
-        view.addSubview(subtitleLabel)
-        view.addSubview(touchLabel)
+        view.addSubview(layoutView)
         view.addSubview(downloadingView)
     }
     
     private func configureComponents() {
-        background.frame = view.frame
+        layoutView.background.frame = view.frame
     }
     
     private func setConstraint() {
         NSLayoutConstraint.activate([
-            titleImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
-            titleImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
-            titleImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35),
-            titleImageView.heightAnchor.constraint(equalToConstant: 250),
-            
-            subtitleLabel.topAnchor.constraint(equalTo: titleImageView.centerYAnchor, constant: 30),
-            subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
-            touchLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -150),
-            touchLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
-            touchLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80),
+            layoutView.topAnchor.constraint(equalTo: view.topAnchor),
+            layoutView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            layoutView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            layoutView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
             downloadingView.topAnchor.constraint(equalTo: view.topAnchor),
             downloadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             downloadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             downloadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    private func registerTapGesture() {
+        addTapGesture()
     }
     
     private func addTapGesture() {
@@ -149,10 +104,6 @@ class TitleScreenViewController: UIViewController {
     
     @objc private func navigateToHomePage(_ sender: UITapGestureRecognizer) {
         print("para próxima tela")
-    }
-    
-    private func registerTapGesture() {
-        addTapGesture()
     }
     
     private func showAlert(title: String, message: String, preferredStyle: UIAlertController.Style, actionTitle: String, actionStyle: UIAlertAction.Style) -> UIAlertController {
