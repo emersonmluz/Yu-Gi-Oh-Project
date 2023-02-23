@@ -56,8 +56,9 @@ class TitleScreenViewController: UIViewController {
     
     private var presenterInterface: TitleScreenPresenterInterface?
     private let presenterController = TitleScreenPresenter()
-    private var isDownloaded: Bool = false
+    private var dowloading = DownloadingView()
     private var cardList: [CardModel]?
+    private var isDownloaded: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,9 +124,11 @@ class TitleScreenViewController: UIViewController {
     
     @objc private func downloadAlert(_ sender: UITapGestureRecognizer) {
         let alert = UIAlertController(title: Constants.TitleScreenStrings.downloadAlertTitle, message: Constants.TitleScreenStrings.downloadAlertMessage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: Constants.TitleScreenStrings.titleActionCancel, style: .cancel))
+        alert.addAction(UIAlertAction(title: Constants.TitleScreenStrings.titleActionCancel, style: .destructive))
         alert.addAction(UIAlertAction(title: Constants.TitleScreenStrings.titleActionDefault, style: .default) {
             _ in
+            self.modalPresentationStyle = .overFullScreen
+            self.present(self.dowloading, animated: false)
             self.presenterInterface?.fetchData()
         })
         self.present(alert, animated: true)
@@ -145,9 +148,11 @@ extension TitleScreenViewController: TitleScreenViewModel {
         cardList = data
         self.isDownloaded = true
         self.registerTapGesture()
+        self.dowloading.dismiss(animated: true)
     }
     
     func showError(error: NSError) {
+        self.dowloading.dismiss(animated: true)
         let alert = UIAlertController(title: Constants.TitleScreenStrings.alertErrorTitle, message: Constants.TitleScreenStrings.alertErrorMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: Constants.TitleScreenStrings.alertErrorActionTitle, style: .default))
         self.present(alert, animated: true)
