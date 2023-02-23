@@ -9,18 +9,9 @@ import UIKit
 import Lottie
 
 class TitleScreenViewController: UIViewController {
-    private lazy var layoutView: LayoutTitleScreen = {
-        let layout = LayoutTitleScreen()
-        layout.translatesAutoresizingMaskIntoConstraints = false
-        return layout
-    }()
     
-    private lazy var downloadingView: DownloadingView = {
-        let view = DownloadingView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
+    private let layoutView = LayoutTitleScreen()
+    private let downloadingView = DownloadingView()
     private var presenterInterface: TitleScreenPresenterInterface?
     private let presenterController = TitleScreenPresenter()
     private var isDownloaded: Bool = false {didSet {registerTapGestureNavigation()}}

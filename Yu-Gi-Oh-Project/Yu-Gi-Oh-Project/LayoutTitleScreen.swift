@@ -63,6 +63,7 @@ class LayoutTitleScreen: UIView {
     }
     
     private func configUI() {
+        self.translatesAutoresizingMaskIntoConstraints = false
         setComponents()
         setConstraint()
     }

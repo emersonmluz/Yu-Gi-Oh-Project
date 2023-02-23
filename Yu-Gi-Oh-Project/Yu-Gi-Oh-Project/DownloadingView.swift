@@ -44,6 +44,7 @@ class DownloadingView: UIView {
     }
     
     internal func configView() {
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = .white
         self.isHidden = true
     }
