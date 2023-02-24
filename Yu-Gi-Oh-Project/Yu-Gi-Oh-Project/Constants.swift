@@ -46,4 +46,22 @@ class Constants {
     struct NetWorking {
         static let urlCardList = "https://db.ygoprodeck.com/api/v7/cardinfo.php?format=Speed%20Duel"
     }
+    
+    struct CoreData {
+        static let entityName = "CardBase"
+        
+        struct fieldsName {
+            static let id = "id"
+            static let name = "name"
+            static let type = "type"
+            static let frameType = "frameType"
+            static let desc = "desc"
+            static let atk = "atk"
+            static let def = "def"
+            static let level = "level"
+            static let style = "style"
+            static let attribute = "attribute"
+            static let image = "image"
+        }
+    }
 }

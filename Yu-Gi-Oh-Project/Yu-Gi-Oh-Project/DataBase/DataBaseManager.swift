@@ -12,7 +12,7 @@ class DataBaseManager {
     func loadData() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CardBase")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.CoreData.entityName)
         do {
             cardBase = try managedContext.fetch(fetchRequest)
         } catch let error as NSError {
@@ -23,19 +23,19 @@ class DataBaseManager {
     func save(cardModel: CardModel) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "CardBase", in: managedContext)!
+        let entity = NSEntityDescription.entity(forEntityName: Constants.CoreData.entityName, in: managedContext)!
         let card = NSManagedObject(entity: entity, insertInto: managedContext)
-        card.setValue(cardModel.id, forKey: "id")
-        card.setValue(cardModel.name, forKey: "name")
-        card.setValue(cardModel.type, forKey: "type")
-        card.setValue(cardModel.frameType, forKey: "frameType")
-        card.setValue(cardModel.description, forKey: "desc")
-        card.setValue(cardModel.atk, forKey: "atk")
-        card.setValue(cardModel.def, forKey: "def")
-        card.setValue(cardModel.level, forKey: "level")
-        card.setValue(cardModel.style, forKey: "style")
-        card.setValue(cardModel.attribute, forKey: "attribute")
-        card.setValue(cardModel.images.first?.imageUrl, forKey: "image")
+        card.setValue(cardModel.id, forKey: Constants.CoreData.fieldsName.id)
+        card.setValue(cardModel.name, forKey: Constants.CoreData.fieldsName.name)
+        card.setValue(cardModel.type, forKey: Constants.CoreData.fieldsName.type)
+        card.setValue(cardModel.frameType, forKey: Constants.CoreData.fieldsName.frameType)
+        card.setValue(cardModel.description, forKey: Constants.CoreData.fieldsName.desc)
+        card.setValue(cardModel.atk, forKey: Constants.CoreData.fieldsName.atk)
+        card.setValue(cardModel.def, forKey: Constants.CoreData.fieldsName.def)
+        card.setValue(cardModel.level, forKey: Constants.CoreData.fieldsName.level)
+        card.setValue(cardModel.style, forKey: Constants.CoreData.fieldsName.style)
+        card.setValue(cardModel.attribute, forKey: Constants.CoreData.fieldsName.attribute)
+        card.setValue(cardModel.images.first?.imageUrl, forKey: Constants.CoreData.fieldsName.image)
         do {
             try managedContext.save()
             cardBase.append(card)
