@@ -14,13 +14,12 @@ class TitleScreenViewController: UIViewController {
     private let downloadingView = DownloadingView()
     private var presenterInterface: TitleScreenPresenterInterface?
     private let presenterController = TitleScreenPresenter()
-    private var isDownloaded: Bool = false {didSet {registerTapGestureNavigation()}}
     private var cardList: [CardModel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configUI()
         dataBase.loadData()
+        configUI()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -33,7 +32,7 @@ class TitleScreenViewController: UIViewController {
         addComponents()
         setConstraint()
         configureComponents()
-        registerTapGestureDownloadAlert()
+        registerTapGesture()
     }
     
     private func assignDelegate() {
@@ -64,6 +63,14 @@ class TitleScreenViewController: UIViewController {
             downloadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             downloadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    private func registerTapGesture() {
+        if cardBase.isEmpty {
+            registerTapGestureDownloadAlert()
+        } else {
+            registerTapGestureNavigation()
+        }
     }
     
     private func registerTapGestureDownloadAlert() {
@@ -111,7 +118,7 @@ extension TitleScreenViewController: TitleScreenViewModel {
         for card in cardList! {
             dataBase.save(cardModel: card)
         }
-        isDownloaded = true
+        registerTapGesture()
         downloadingView.isHidden = true
         let alert = showAlert(title: Constants.TitleScreenStrings.alertSuccessTitle,
                  message: Constants.TitleScreenStrings.alertSuccessMessage,
