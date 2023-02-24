@@ -16,7 +16,9 @@ class TitleScreenInteractor: TitleScreenInteractorInterface {
     internal func requestDownloadData() {
         apiInput.fetchData() { cardList, error  in
             self.dataWork?.dataBaseWork(data: cardList ?? nil)
-            self.apiOutput?.fetchFinished(output: cardList, error: error)
+            DispatchQueue.main.async {
+                self.apiOutput?.fetchFinished(output: cardList, error: error)
+            }
         }
     }
 }

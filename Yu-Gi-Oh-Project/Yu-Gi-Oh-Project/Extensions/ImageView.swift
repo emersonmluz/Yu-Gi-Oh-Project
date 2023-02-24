@@ -7,20 +7,22 @@
 
 import UIKit
 
+extension UIImage {
+    var base64: String? {
+        self.jpegData(compressionQuality: 1)?.base64EncodedString()
+    }
+}
+
 extension UIImageView {
     func loadFrom(URLAddress: String) {
         guard let url = URL(string: URLAddress) else {
             return
         }
         
-        DispatchQueue.global().async {
-            let imageData = try? Data(contentsOf: url)
-            
-            DispatchQueue.main.async { [weak self] in
-                if let imageData = imageData {
-                    if let loadedImage = UIImage(data: imageData) {
-                            self?.image = loadedImage
-                    }
+        DispatchQueue.main.async { [weak self] in
+            if let imageData = try? Data(contentsOf: url) {
+                if let loadedImage = UIImage(data: imageData) {
+                    self?.image = loadedImage
                 }
             }
         }

@@ -20,7 +20,7 @@ class LayoutTitleScreen: UIView {
         return animation
     }()
     
-    private lazy var titleImageView: UIImageView = {
+    lazy var titleImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: Constants.ImageName.yuGiOhTitle)
