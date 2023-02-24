@@ -20,10 +20,10 @@ class TitleScreenPresenter: TitleScreenPresenterInterface {
 extension TitleScreenPresenter: TitleScreenInteractorOutput {
     func fetchFinished(output: CardList?, error: NSError?) {
         if output != nil {
-            viewModel?.extractData(data: output?.data ?? [])
+            viewModel?.showSuccess()
         } else {
-            guard let error = error else {return}
-            viewModel?.showError(error: error)
+            guard error != nil else {return}
+            viewModel?.showError()
         }
     }
 }

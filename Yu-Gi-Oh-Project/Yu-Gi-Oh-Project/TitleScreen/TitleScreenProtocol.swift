@@ -15,8 +15,10 @@ protocol TitleScreenPresenterInterface {
 }
 
 protocol TitleScreenInteractorInterface {
-    var api: ApiManager { get }
+    var apiInput: ApiManager { get }
     var apiOutput: TitleScreenInteractorOutput? { get }
+    var dataWork: TitleScreenInteractorWork? { get }
+    var dataWorkController: DataWork { get }
     func requestDownloadData()
 }
 
@@ -24,7 +26,11 @@ protocol TitleScreenInteractorOutput: AnyObject {
     func fetchFinished(output: CardList?, error: NSError?)
 }
 
+protocol TitleScreenInteractorWork {
+    func dataBaseWork(data: CardList?)
+}
+
 protocol TitleScreenViewModel: AnyObject {
-    func extractData(data: [CardModel])
-    func showError(error: NSError)
+    func showSuccess()
+    func showError()
 }

@@ -14,7 +14,6 @@ class TitleScreenViewController: UIViewController {
     private let downloadingView = DownloadingView()
     private var presenterInterface: TitleScreenPresenterInterface?
     private let presenterController = TitleScreenPresenter()
-    private var cardList: [CardModel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +39,7 @@ class TitleScreenViewController: UIViewController {
         presenterController.interactorInterface = presenterController.interactorController
         presenterController.interactorController.apiOutput = presenterController
         presenterController.viewModel = self
+        presenterController.interactorController.dataWork = presenterController.interactorController.dataWorkController
     }
     
     private func addComponents() {
@@ -113,11 +113,7 @@ class TitleScreenViewController: UIViewController {
 }
 
 extension TitleScreenViewController: TitleScreenViewModel {
-    func extractData(data: [CardModel]) {
-        cardList = data
-        for card in cardList! {
-            dataBase.save(cardModel: card)
-        }
+    func showSuccess() {
         registerTapGesture()
         downloadingView.isHidden = true
         let alert = showAlert(title: Constants.TitleScreenStrings.alertSuccessTitle,
@@ -128,7 +124,7 @@ extension TitleScreenViewController: TitleScreenViewModel {
         self.present(alert, animated: true)
     }
     
-    func showError(error: NSError) {
+    func showError() {
         downloadingView.isHidden = true
         let alert = showAlert(title: Constants.TitleScreenStrings.alertErrorTitle,
                  message: Constants.TitleScreenStrings.alertErrorMessage,

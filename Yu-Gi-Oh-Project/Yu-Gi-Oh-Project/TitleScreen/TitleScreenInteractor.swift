@@ -8,12 +8,15 @@
 import Foundation
 
 class TitleScreenInteractor: TitleScreenInteractorInterface {
-    var api = ApiManager(url: Constants.NetWorking.urlCardList)
+    var apiInput = ApiManager(url: Constants.NetWorking.urlCardList)
     weak var apiOutput: TitleScreenInteractorOutput?
+    var dataWork: TitleScreenInteractorWork?
+    let dataWorkController = DataWork()
     
     internal func requestDownloadData() {
-        api.fetchData() { list, error  in
-            self.apiOutput?.fetchFinished(output: list, error: error)
+        apiInput.fetchData() { cardList, error  in
+            self.dataWork?.dataBaseWork(data: cardList ?? nil)
+            self.apiOutput?.fetchFinished(output: cardList, error: error)
         }
     }
 }
