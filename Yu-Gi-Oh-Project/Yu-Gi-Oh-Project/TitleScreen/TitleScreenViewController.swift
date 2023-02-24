@@ -17,12 +17,16 @@ class TitleScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataBase.loadData()
+        configData()
         configUI()
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    private func configData() {
+        dataBase.loadData()
     }
     
     private func configUI() {
@@ -66,21 +70,7 @@ class TitleScreenViewController: UIViewController {
     }
     
     private func registerTapGesture() {
-        if cardBase.isEmpty {
-            registerTapGestureDownloadAlert()
-        } else {
-            registerTapGestureNavigation()
-        }
-    }
-    
-    private func registerTapGestureDownloadAlert() {
-        let touch = UITapGestureRecognizer(target: self, action: #selector(downloadAlert(_:)))
-        view.addGestureRecognizer(touch)
-    }
-    
-    private func registerTapGestureNavigation() {
-        let touch = UITapGestureRecognizer(target: self, action: #selector(navigateToHomePage(_:)))
-        view.addGestureRecognizer(touch)
+        presenterInterface?.registerTapGesture()
     }
     
     @objc private func downloadAlert(_ sender: UITapGestureRecognizer) {
@@ -113,6 +103,16 @@ class TitleScreenViewController: UIViewController {
 }
 
 extension TitleScreenViewController: TitleScreenViewModel {
+    func registerTapGestureDownloadAlert() {
+        let touch = UITapGestureRecognizer(target: self, action: #selector(downloadAlert(_:)))
+        view.addGestureRecognizer(touch)
+    }
+    
+    func registerTapGestureNavigation() {
+        let touch = UITapGestureRecognizer(target: self, action: #selector(navigateToHomePage(_:)))
+        view.addGestureRecognizer(touch)
+    }
+    
     func showSuccess() {
         registerTapGesture()
         downloadingView.isHidden = true

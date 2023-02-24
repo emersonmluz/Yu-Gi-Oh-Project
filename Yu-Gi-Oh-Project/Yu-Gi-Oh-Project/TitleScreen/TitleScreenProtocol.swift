@@ -11,6 +11,7 @@ protocol TitleScreenPresenterInterface {
     var interactorInterface: TitleScreenInteractorInterface? { get }
     var interactorController: TitleScreenInteractor { get }
     var viewModel: TitleScreenViewModel? { get }
+    func registerTapGesture()
     func fetchData()
 }
 
@@ -31,6 +32,8 @@ protocol TitleScreenInteractorWork {
 }
 
 protocol TitleScreenViewModel: AnyObject {
+    func registerTapGestureDownloadAlert()
+    func registerTapGestureNavigation()
     func showSuccess()
     func showError()
 }

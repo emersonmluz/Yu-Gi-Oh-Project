@@ -12,6 +12,14 @@ class TitleScreenPresenter: TitleScreenPresenterInterface {
     let interactorController = TitleScreenInteractor()
     weak var viewModel: TitleScreenViewModel?
     
+    func registerTapGesture() {
+        if cardBase.isEmpty {
+            viewModel?.registerTapGestureDownloadAlert()
+        } else {
+            viewModel?.registerTapGestureNavigation()
+        }
+    }
+    
     internal func fetchData() {
         interactorInterface?.requestDownloadData()
     }
