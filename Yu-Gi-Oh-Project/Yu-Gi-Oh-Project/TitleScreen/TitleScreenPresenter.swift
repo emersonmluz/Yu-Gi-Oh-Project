@@ -13,7 +13,7 @@ class TitleScreenPresenter: TitleScreenPresenterInterface {
     weak var viewModel: TitleScreenViewModel?
     
     func registerTapGesture() {
-        if cardBase.isEmpty {
+        if cardBase.count < 908 {
             viewModel?.registerTapGestureDownloadAlert()
         } else {
             viewModel?.registerTapGestureNavigation()

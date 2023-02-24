@@ -82,6 +82,7 @@ class TitleScreenViewController: UIViewController {
         alert.addAction(UIAlertAction(title: Constants.TitleScreenStrings.titleActionDefault, style: .default) {
             _ in
             self.downloadingView.isHidden = false
+            dataBase.deleteData()
             self.presenterInterface?.fetchData()
         })
         self.present(alert, animated: true)

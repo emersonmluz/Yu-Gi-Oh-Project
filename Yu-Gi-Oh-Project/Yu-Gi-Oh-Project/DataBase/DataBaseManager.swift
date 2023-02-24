@@ -43,5 +43,17 @@ class DataBaseManager {
             print(error)
         }
     }
+    
+    func deleteData() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        do {
+            managedContext.deletedObjects
+            cardBase.removeAll()
+            try managedContext.save()
+        } catch let error as NSError {
+            print(error)
+        }
+    }
 }
 
