@@ -8,9 +8,14 @@
 import Foundation
 
 class TitleScreenPresenter: TitleScreenPresenterInterface {
-    var interactorInterface: TitleScreenInteractorInterface?
-    let interactorController = TitleScreenInteractor()
+    var interactorInterface: TitleScreenInteractorInterface
     weak var viewModel: TitleScreenViewModel?
+    
+    init(interactorInterface: TitleScreenInteractorInterface, viewModel: TitleScreenViewModel? = nil) {
+        self.interactorInterface = interactorInterface
+        self.viewModel = viewModel
+        self.interactorInterface.apiOutput = self
+    }
     
     func registerTapGesture() {
         if cardBase.count < 908 {
@@ -21,7 +26,7 @@ class TitleScreenPresenter: TitleScreenPresenterInterface {
     }
     
     internal func fetchData() {
-        interactorInterface?.requestDownloadData()
+        interactorInterface.requestDownloadData()
     }
 }
 

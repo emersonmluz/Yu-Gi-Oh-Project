@@ -8,18 +8,16 @@
 import Foundation
 
 protocol TitleScreenPresenterInterface {
-    var interactorInterface: TitleScreenInteractorInterface? { get }
-    var interactorController: TitleScreenInteractor { get }
-    var viewModel: TitleScreenViewModel? { get }
+    var interactorInterface: TitleScreenInteractorInterface { get }
+    var viewModel: TitleScreenViewModel? { get set }
     func registerTapGesture()
     func fetchData()
 }
 
 protocol TitleScreenInteractorInterface {
     var apiInput: ApiManager { get }
-    var apiOutput: TitleScreenInteractorOutput? { get }
-    var dataWork: TitleScreenInteractorWork? { get }
-    var dataWorkController: DataWork { get }
+    var apiOutput: TitleScreenInteractorOutput? { get set }
+    var dataWork: TitleScreenInteractorWork { get }
     func requestDownloadData()
 }
 

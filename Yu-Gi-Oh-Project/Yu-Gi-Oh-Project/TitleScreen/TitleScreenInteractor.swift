@@ -10,12 +10,17 @@ import Foundation
 class TitleScreenInteractor: TitleScreenInteractorInterface {
     var apiInput = ApiManager(url: Constants.NetWorking.urlCardList)
     weak var apiOutput: TitleScreenInteractorOutput?
-    var dataWork: TitleScreenInteractorWork?
-    let dataWorkController = DataWork()
+    var dataWork: TitleScreenInteractorWork
+    
+    init(apiInput: ApiManager = ApiManager(url: Constants.NetWorking.urlCardList), apiOutput: TitleScreenInteractorOutput? = nil, dataWork: TitleScreenInteractorWork) {
+        self.apiInput = apiInput
+        self.apiOutput = apiOutput
+        self.dataWork = dataWork
+    }
     
     internal func requestDownloadData() {
         apiInput.fetchData() { cardList, error  in
-            self.dataWork?.dataBaseWork(data: cardList ?? nil)
+            self.dataWork.dataBaseWork(data: cardList ?? nil)
             DispatchQueue.main.async {
                 self.apiOutput?.fetchFinished(output: cardList, error: error)
             }

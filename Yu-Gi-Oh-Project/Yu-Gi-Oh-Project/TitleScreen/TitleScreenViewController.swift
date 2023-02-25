@@ -12,8 +12,16 @@ class TitleScreenViewController: UIViewController {
     
     private let layoutView = LayoutTitleScreen()
     private let downloadingView = DownloadingView()
-    private var presenterInterface: TitleScreenPresenterInterface?
-    private let presenterController = TitleScreenPresenter()
+    private var presenterInterface: TitleScreenPresenterInterface
+    
+    init(presenterInterface: TitleScreenPresenterInterface) {
+        self.presenterInterface = presenterInterface
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,23 +35,15 @@ class TitleScreenViewController: UIViewController {
     
     private func configData() {
         dataBase.loadData()
+        presenterInterface.viewModel = self
     }
     
     private func configUI() {
         view.backgroundColor = .white
-        assignDelegate()
         addComponents()
         setConstraint()
         configureComponents()
         registerTapGesture()
-    }
-    
-    private func assignDelegate() {
-        presenterInterface = presenterController
-        presenterController.interactorInterface = presenterController.interactorController
-        presenterController.interactorController.apiOutput = presenterController
-        presenterController.viewModel = self
-        presenterController.interactorController.dataWork = presenterController.interactorController.dataWorkController
     }
     
     private func addComponents() {
@@ -70,7 +70,7 @@ class TitleScreenViewController: UIViewController {
     }
     
     private func registerTapGesture() {
-        presenterInterface?.registerTapGesture()
+        presenterInterface.registerTapGesture()
     }
     
     @objc private func downloadAlert(_ sender: UITapGestureRecognizer) {
@@ -83,7 +83,7 @@ class TitleScreenViewController: UIViewController {
             _ in
             self.downloadingView.isHidden = false
             dataBase.deleteData()
-            self.presenterInterface?.fetchData()
+            self.presenterInterface.fetchData()
         })
         self.present(alert, animated: true)
     }

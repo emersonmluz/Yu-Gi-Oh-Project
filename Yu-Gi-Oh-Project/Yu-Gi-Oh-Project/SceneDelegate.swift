@@ -19,7 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
         
-        let rootViewController = TitleScreenViewController()
+        let rootViewController = TitleScreenViewController(
+            presenterInterface: TitleScreenPresenter (
+            interactorInterface: TitleScreenInteractor (
+            dataWork: DataWork())))
+        
         let navigator = UINavigationController(rootViewController: rootViewController)
 
         let backImage = UIImage(systemName: Constants.SystemImageName.arrowShapeLeftFill)
