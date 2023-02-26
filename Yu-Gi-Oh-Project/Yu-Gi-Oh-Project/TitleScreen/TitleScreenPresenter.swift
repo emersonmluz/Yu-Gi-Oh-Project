@@ -47,7 +47,7 @@ extension TitleScreenPresenter: TitleScreenInteractorOutput {
                 interactorInterface.downloadImage(card: card) { [weak self] image in
                     var cardModel = card
                     cardModel.images[0].imageUrl = image.base64 ?? ""
-                    self?.interactorInterface.saveDataBase(data: card)
+                    self?.interactorInterface.saveDataBase(data: cardModel)
                 }
             }
             DispatchQueue.main.async {
