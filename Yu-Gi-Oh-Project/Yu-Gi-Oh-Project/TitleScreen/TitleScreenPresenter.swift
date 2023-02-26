@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class TitleScreenPresenter: TitleScreenPresenterInterface {
     var interactorInterface: TitleScreenInteractorInterface
@@ -41,7 +42,19 @@ class TitleScreenPresenter: TitleScreenPresenterInterface {
 extension TitleScreenPresenter: TitleScreenInteractorOutput {
     func fetchFinished(output: CardList?, error: NSError?) {
         if output != nil {
-            viewModel?.showSuccess()
+            guard let cardList = output?.data else {return}
+            for card in cardList {
+                var cardModel = card
+                let cardImage = UIImageView()
+                cardImage.loadFrom(URLAddress: card.images[0].imageUrl)
+                DispatchQueue.main.async {
+                    cardModel.images[0].imageUrl = cardImage.image?.base64 ?? ""
+                    self.interactorInterface.saveDataBase(data: cardModel)
+                }
+            }
+            DispatchQueue.main.async {
+                self.viewModel?.showSuccess()
+            }
         } else {
             guard error != nil else {return}
             viewModel?.showError()

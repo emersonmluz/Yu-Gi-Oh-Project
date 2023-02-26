@@ -20,6 +20,7 @@ protocol TitleScreenInteractorInterface {
     var apiInput: ApiManager { get }
     var apiOutput: TitleScreenInteractorOutput? { get set }
     var dataWork: TitleScreenInteractorWork { get }
+    func saveDataBase(data: CardModel)
     func loadDataBase()
     func deleteDataBase()
     func requestDownloadData()
@@ -30,8 +31,8 @@ protocol TitleScreenInteractorOutput: AnyObject {
 }
 
 protocol TitleScreenInteractorWork {
+    func saveData(data: CardModel)
     func loadData()
-    func saveData(data: CardList?)
     func deleteData()
 }
 

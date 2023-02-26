@@ -9,21 +9,12 @@ import Foundation
 import UIKit
 
 class DataWork: TitleScreenInteractorWork {
-    internal func loadData() {
-        dataBase.loadData()
+    internal func saveData(data: CardModel) {
+        dataBase.save(cardModel: data)
     }
     
-    internal func saveData(data: CardList?) {
-        guard let cardList = data?.data else {return}
-        for card in cardList {
-            var cardModel = card
-            let cardImage = UIImageView()
-            cardImage.loadFrom(URLAddress: card.images[0].imageUrl)
-            DispatchQueue.main.async {
-                cardModel.images[0].imageUrl = cardImage.image?.base64 ?? ""
-                dataBase.save(cardModel: cardModel)
-            }
-        }
+    internal func loadData() {
+        dataBase.loadData()
     }
     
     internal func deleteData() {

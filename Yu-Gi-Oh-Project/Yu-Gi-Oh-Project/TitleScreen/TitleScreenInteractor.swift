@@ -20,11 +20,12 @@ class TitleScreenInteractor: TitleScreenInteractorInterface {
     
     internal func requestDownloadData() {
         apiInput.fetchData() { cardList, error  in
-            self.dataWork.saveData(data: cardList ?? nil)
-            DispatchQueue.main.async {
-                self.apiOutput?.fetchFinished(output: cardList, error: error)
-            }
+            self.apiOutput?.fetchFinished(output: cardList, error: error)
         }
+    }
+    
+    internal func saveDataBase(data: CardModel) {
+        self.dataWork.saveData(data: data)
     }
     
     internal func loadDataBase() {
