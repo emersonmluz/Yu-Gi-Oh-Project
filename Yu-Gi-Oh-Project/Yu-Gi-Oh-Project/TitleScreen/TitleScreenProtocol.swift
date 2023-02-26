@@ -10,6 +10,7 @@ import Foundation
 protocol TitleScreenPresenterInterface {
     var interactorInterface: TitleScreenInteractorInterface { get }
     var viewModel: TitleScreenViewModel? { get set }
+    func deleteDataBase()
     func registerTapGesture()
     func fetchData()
 }
@@ -18,6 +19,7 @@ protocol TitleScreenInteractorInterface {
     var apiInput: ApiManager { get }
     var apiOutput: TitleScreenInteractorOutput? { get set }
     var dataWork: TitleScreenInteractorWork { get }
+    func deleteDataBase()
     func requestDownloadData()
 }
 
@@ -26,7 +28,8 @@ protocol TitleScreenInteractorOutput: AnyObject {
 }
 
 protocol TitleScreenInteractorWork {
-    func dataBaseWork(data: CardList?)
+    func saveData(data: CardList?)
+    func deleteData()
 }
 
 protocol TitleScreenViewModel: AnyObject {

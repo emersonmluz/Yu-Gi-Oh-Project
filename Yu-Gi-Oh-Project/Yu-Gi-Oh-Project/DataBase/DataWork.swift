@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class DataWork: TitleScreenInteractorWork {
-    func dataBaseWork(data: CardList?) {
+    internal func saveData(data: CardList?) {
         guard let cardList = data?.data else {return}
         for card in cardList {
             var cardModel = card
@@ -20,5 +20,9 @@ class DataWork: TitleScreenInteractorWork {
                 dataBase.save(cardModel: cardModel)
             }
         }
+    }
+    
+    internal func deleteData() {
+        dataBase.deleteData()
     }
 }

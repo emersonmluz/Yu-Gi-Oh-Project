@@ -17,7 +17,7 @@ class TitleScreenPresenter: TitleScreenPresenterInterface {
         self.interactorInterface.apiOutput = self
     }
     
-    func registerTapGesture() {
+    internal func registerTapGesture() {
         if cardBase.count < 908 {
             viewModel?.registerTapGestureDownloadAlert()
         } else {
@@ -27,6 +27,10 @@ class TitleScreenPresenter: TitleScreenPresenterInterface {
     
     internal func fetchData() {
         interactorInterface.requestDownloadData()
+    }
+    
+    internal func deleteDataBase() {
+        interactorInterface.deleteDataBase()
     }
 }
 
