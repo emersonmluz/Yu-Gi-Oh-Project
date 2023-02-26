@@ -40,7 +40,7 @@ class TitleScreenPresenter: TitleScreenPresenterInterface {
 }
 
 extension TitleScreenPresenter: TitleScreenInteractorOutput {
-    func fetchDataFinished(output: CardList?, error: NSError?) {
+    internal func fetchDataFinished(output: CardList?, error: NSError?) {
         if output != nil {
             guard let cardList = output?.data else {return}
             for card in cardList {
@@ -57,5 +57,9 @@ extension TitleScreenPresenter: TitleScreenInteractorOutput {
             guard error != nil else {return}
             viewModel?.showError()
         }
+    }
+    
+    internal func dataError() {
+        viewModel?.showError()
     }
 }

@@ -9,18 +9,18 @@ import UIKit
 import CoreData
 
 class DataBaseManager {
-    func loadData() {
+    func loadData(completion: @escaping((NSError?) -> Void)) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.CoreData.entityName)
         do {
             cardBase = try managedContext.fetch(fetchRequest)
         } catch let error as NSError {
-            print(error)
+            completion(error)
         }
     }
     
-    func save(cardModel: CardModel) {
+    func save(cardModel: CardModel, completion: @escaping((NSError?) -> Void)) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: Constants.CoreData.entityName, in: managedContext)!
@@ -40,11 +40,11 @@ class DataBaseManager {
             try managedContext.save()
             cardBase.append(card)
         } catch let error as NSError {
-            print(error)
+            completion(error)
         }
     }
     
-    func deleteData() {
+    func deleteData(completion: @escaping((NSError?) -> Void)) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         do {
@@ -52,7 +52,7 @@ class DataBaseManager {
             cardBase.removeAll()
             try managedContext.save()
         } catch let error as NSError {
-            print(error)
+            completion(error)
         }
     }
 }

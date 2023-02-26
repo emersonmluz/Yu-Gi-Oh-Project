@@ -14,11 +14,12 @@ class TitleScreenInteractor: TitleScreenInteractorInterface {
     var workData: TitleScreenInteractorWorkData
     var workInternet: TitleScreenInteractorWorkInternet
     
-    init(apiInput: ApiManager = ApiManager(url: Constants.NetWorking.urlCardList), apiOutput: TitleScreenInteractorOutput? = nil, workData: TitleScreenInteractorWorkData, workInternet: TitleScreenInteractorWorkInternet) {
+    init(apiInput: ApiManager = ApiManager(url: Constants.NetWorking.urlCardList), output: TitleScreenInteractorOutput? = nil, workData: TitleScreenInteractorWorkData, workInternet: TitleScreenInteractorWorkInternet) {
         self.api = apiInput
-        self.output = apiOutput
+        self.output = output
         self.workData = workData
         self.workInternet = workInternet
+        self.workData.workError = self
     }
     
     internal func requestDownloadData() {
@@ -43,5 +44,11 @@ class TitleScreenInteractor: TitleScreenInteractorInterface {
         workInternet.downloadImage(card: card) { image in
             completion(image)
         }
+    }
+}
+
+extension TitleScreenInteractor: TitleScreenWorkDataError {
+    internal func workError() {
+        output?.dataError()
     }
 }
