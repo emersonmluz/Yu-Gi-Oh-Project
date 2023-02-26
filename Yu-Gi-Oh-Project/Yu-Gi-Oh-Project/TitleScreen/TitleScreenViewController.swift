@@ -81,6 +81,7 @@ class TitleScreenViewController: UIViewController {
                                    actionStyle: .destructive)
         alert.addAction(UIAlertAction(title: Constants.TitleScreenStrings.titleActionDefault, style: .default) {
             _ in
+            self.downloadingView.startDownload()
             self.downloadingView.isHidden = false
             self.presenterInterface.deleteDataBase()
             self.presenterInterface.fetchData()
@@ -116,7 +117,7 @@ extension TitleScreenViewController: TitleScreenViewModel {
     
     func showSuccess() {
         registerTapGesture()
-        downloadingView.isHidden = true
+        downloadingView.stopDownload()
         let alert = showAlert(title: Constants.TitleScreenStrings.alertSuccessTitle,
                  message: Constants.TitleScreenStrings.alertSuccessMessage,
                  preferredStyle: .alert,
@@ -126,7 +127,7 @@ extension TitleScreenViewController: TitleScreenViewModel {
     }
     
     func showError() {
-        downloadingView.isHidden = true
+        downloadingView.stopDownload()
         let alert = showAlert(title: Constants.TitleScreenStrings.alertErrorTitle,
                  message: Constants.TitleScreenStrings.alertErrorMessage,
                  preferredStyle: .alert,

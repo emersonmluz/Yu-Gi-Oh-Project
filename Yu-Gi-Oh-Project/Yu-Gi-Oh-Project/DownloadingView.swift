@@ -10,18 +10,17 @@ import Lottie
 
 class DownloadingView: UIView {
     
-    private lazy var downloadingAnimation: LottieAnimationView = {
+    private lazy var animation: LottieAnimationView = {
         var animation = LottieAnimationView()
         animation = .init(name: Constants.AnimationName.downloadingAnimation)
         animation.contentMode = .scaleAspectFit
         animation.loopMode = .loop
         animation.animationSpeed = 0.8
-        animation.play()
         animation.translatesAutoresizingMaskIntoConstraints = false
         return animation
     }()
     
-    private lazy var downloadingLabel: UILabel = {
+    private lazy var infoLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.TitleScreenStrings.downloadingText
         label.font = UIFont(name: Constants.FontName.arial, size: 20)
@@ -50,20 +49,30 @@ class DownloadingView: UIView {
     }
     
     internal func addComponents() {
-        self.addSubview(downloadingAnimation)
-        self.addSubview(downloadingLabel)
+        self.addSubview(animation)
+        self.addSubview(infoLabel)
     }
     
     internal func setConstraint() {
         NSLayoutConstraint.activate([
-            downloadingAnimation.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -100),
-            downloadingAnimation.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
-            downloadingAnimation.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
-            downloadingAnimation.heightAnchor.constraint(equalToConstant: 150),
+            animation.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -100),
+            animation.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
+            animation.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
+            animation.heightAnchor.constraint(equalToConstant: 150),
             
-            downloadingLabel.topAnchor.constraint(equalTo: downloadingAnimation.bottomAnchor, constant: 20),
-            downloadingLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            downloadingLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+            infoLabel.topAnchor.constraint(equalTo: animation.bottomAnchor, constant: 20),
+            infoLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            infoLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         ])
+    }
+    
+    internal func startDownload() {
+        self.isHidden = false
+        animation.play()
+    }
+    
+    internal func stopDownload() {
+        self.isHidden = true
+        animation.stop()
     }
 }
