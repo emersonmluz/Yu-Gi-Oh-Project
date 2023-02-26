@@ -29,6 +29,10 @@ class TitleScreenPresenter: TitleScreenPresenterInterface {
         interactorInterface.requestDownloadData()
     }
     
+    internal func loadDataBase() {
+        interactorInterface.loadDataBase()
+    }
+    
     internal func deleteDataBase() {
         interactorInterface.deleteDataBase()
     }

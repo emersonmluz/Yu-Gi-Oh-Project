@@ -34,7 +34,7 @@ class TitleScreenViewController: UIViewController {
     }
     
     private func configData() {
-        dataBase.loadData()
+        presenterInterface.loadDataBase()
         presenterInterface.viewModel = self
     }
     

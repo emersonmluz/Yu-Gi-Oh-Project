@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 
 class DataWork: TitleScreenInteractorWork {
+    internal func loadData() {
+        dataBase.loadData()
+    }
+    
     internal func saveData(data: CardList?) {
         guard let cardList = data?.data else {return}
         for card in cardList {

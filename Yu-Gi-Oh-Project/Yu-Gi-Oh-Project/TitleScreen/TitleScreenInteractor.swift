@@ -27,6 +27,10 @@ class TitleScreenInteractor: TitleScreenInteractorInterface {
         }
     }
     
+    internal func loadDataBase() {
+        dataWork.loadData()
+    }
+    
     internal func deleteDataBase() {
         dataWork.deleteData()
     }
