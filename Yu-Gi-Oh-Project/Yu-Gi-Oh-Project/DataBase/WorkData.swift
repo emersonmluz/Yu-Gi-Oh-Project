@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DataWork: TitleScreenInteractorWork {
+class WorkData: TitleScreenInteractorWorkData {
     internal func saveData(data: CardModel) {
         dataBase.save(cardModel: data)
     }

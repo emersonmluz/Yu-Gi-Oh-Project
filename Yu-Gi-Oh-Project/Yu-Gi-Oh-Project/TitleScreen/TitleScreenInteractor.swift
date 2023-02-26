@@ -6,33 +6,42 @@
 //
 
 import Foundation
+import UIKit
 
 class TitleScreenInteractor: TitleScreenInteractorInterface {
-    var apiInput = ApiManager(url: Constants.NetWorking.urlCardList)
-    weak var apiOutput: TitleScreenInteractorOutput?
-    var dataWork: TitleScreenInteractorWork
+    var api = ApiManager(url: Constants.NetWorking.urlCardList)
+    weak var output: TitleScreenInteractorOutput?
+    var workData: TitleScreenInteractorWorkData
+    var workInternet: TitleScreenInteractorWorkInternet
     
-    init(apiInput: ApiManager = ApiManager(url: Constants.NetWorking.urlCardList), apiOutput: TitleScreenInteractorOutput? = nil, dataWork: TitleScreenInteractorWork) {
-        self.apiInput = apiInput
-        self.apiOutput = apiOutput
-        self.dataWork = dataWork
+    init(apiInput: ApiManager = ApiManager(url: Constants.NetWorking.urlCardList), apiOutput: TitleScreenInteractorOutput? = nil, workData: TitleScreenInteractorWorkData, workInternet: TitleScreenInteractorWorkInternet) {
+        self.api = apiInput
+        self.output = apiOutput
+        self.workData = workData
+        self.workInternet = workInternet
     }
     
     internal func requestDownloadData() {
-        apiInput.fetchData() { cardList, error  in
-            self.apiOutput?.fetchFinished(output: cardList, error: error)
+        api.fetchData() { cardList, error  in
+            self.output?.fetchDataFinished(output: cardList, error: error)
         }
     }
     
     internal func saveDataBase(data: CardModel) {
-        self.dataWork.saveData(data: data)
+        self.workData.saveData(data: data)
     }
     
     internal func loadDataBase() {
-        dataWork.loadData()
+        workData.loadData()
     }
     
     internal func deleteDataBase() {
-        dataWork.deleteData()
+        workData.deleteData()
+    }
+    
+    internal func downloadImage(card: CardModel, completion: @escaping((UIImage) -> Void)) {
+        workInternet.downloadImage(card: card) { image in
+            completion(image)
+        }
     }
 }

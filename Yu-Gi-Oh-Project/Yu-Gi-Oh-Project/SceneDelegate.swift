@@ -19,10 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
         
-        let rootViewController = TitleScreenViewController(
-            presenterInterface: TitleScreenPresenter (
-            interactorInterface: TitleScreenInteractor (
-            dataWork: DataWork())))
+        let rootViewController = TitleScreenViewController(presenterInterface:
+                TitleScreenPresenter (interactorInterface:
+                TitleScreenInteractor (workData: WorkData(), workInternet: WorkInternet())))
         
         let navigator = UINavigationController(rootViewController: rootViewController)
 

@@ -15,7 +15,7 @@ class TitleScreenPresenter: TitleScreenPresenterInterface {
     init(interactorInterface: TitleScreenInteractorInterface, viewModel: TitleScreenViewModel? = nil) {
         self.interactorInterface = interactorInterface
         self.viewModel = viewModel
-        self.interactorInterface.apiOutput = self
+        self.interactorInterface.output = self
     }
     
     internal func registerTapGesture() {
@@ -40,16 +40,14 @@ class TitleScreenPresenter: TitleScreenPresenterInterface {
 }
 
 extension TitleScreenPresenter: TitleScreenInteractorOutput {
-    func fetchFinished(output: CardList?, error: NSError?) {
+    func fetchDataFinished(output: CardList?, error: NSError?) {
         if output != nil {
             guard let cardList = output?.data else {return}
             for card in cardList {
-                var cardModel = card
-                let cardImage = UIImageView()
-                cardImage.loadFrom(URLAddress: card.images[0].imageUrl)
-                DispatchQueue.main.async {
-                    cardModel.images[0].imageUrl = cardImage.image?.base64 ?? ""
-                    self.interactorInterface.saveDataBase(data: cardModel)
+                interactorInterface.downloadImage(card: card) { [weak self] image in
+                    var cardModel = card
+                    cardModel.images[0].imageUrl = image.base64 ?? ""
+                    self?.interactorInterface.saveDataBase(data: card)
                 }
             }
             DispatchQueue.main.async {

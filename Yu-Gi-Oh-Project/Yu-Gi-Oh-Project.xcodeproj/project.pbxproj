@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE2628F329A8F35E00B008D2 /* DataWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2628F229A8F35E00B008D2 /* DataWork.swift */; };
+		EE2628F329A8F35E00B008D2 /* WorkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2628F229A8F35E00B008D2 /* WorkData.swift */; };
 		EE2628F529A9076900B008D2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2628F429A9076900B008D2 /* String.swift */; };
+		EE2628F929AAF2F500B008D2 /* WorkInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2628F829AAF2F500B008D2 /* WorkInternet.swift */; };
 		EE93E5D129A543C800A4750F /* TitleScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D029A543C800A4750F /* TitleScreenProtocol.swift */; };
 		EE93E5D329A5449400A4750F /* TitleScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D229A5449400A4750F /* TitleScreenPresenter.swift */; };
 		EE93E5D529A5472B00A4750F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D429A5472B00A4750F /* ApiManager.swift */; };
@@ -32,8 +33,9 @@
 /* Begin PBXFileReference section */
 		024D92BB717377F253E2B066 /* Pods-Yu-Gi-Oh-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yu-Gi-Oh-Project.debug.xcconfig"; path = "Target Support Files/Pods-Yu-Gi-Oh-Project/Pods-Yu-Gi-Oh-Project.debug.xcconfig"; sourceTree = "<group>"; };
 		3E4489D6F2B3A8A124B52073 /* Pods-Yu-Gi-Oh-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yu-Gi-Oh-Project.release.xcconfig"; path = "Target Support Files/Pods-Yu-Gi-Oh-Project/Pods-Yu-Gi-Oh-Project.release.xcconfig"; sourceTree = "<group>"; };
-		EE2628F229A8F35E00B008D2 /* DataWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWork.swift; sourceTree = "<group>"; };
+		EE2628F229A8F35E00B008D2 /* WorkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkData.swift; sourceTree = "<group>"; };
 		EE2628F429A9076900B008D2 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		EE2628F829AAF2F500B008D2 /* WorkInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkInternet.swift; sourceTree = "<group>"; };
 		EE93E5D029A543C800A4750F /* TitleScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenProtocol.swift; sourceTree = "<group>"; };
 		EE93E5D229A5449400A4750F /* TitleScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenPresenter.swift; sourceTree = "<group>"; };
 		EE93E5D429A5472B00A4750F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				EE93E5D429A5472B00A4750F /* ApiManager.swift */,
+				EE2628F829AAF2F500B008D2 /* WorkInternet.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -154,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				EEA27BC029A82123001F0D71 /* DataBaseManager.swift */,
-				EE2628F229A8F35E00B008D2 /* DataWork.swift */,
+				EE2628F229A8F35E00B008D2 /* WorkData.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -320,11 +323,12 @@
 				EEA27BA629A66291001F0D71 /* CardList.swift in Sources */,
 				EEF0D48E29A13E4200B2EA43 /* SceneDelegate.swift in Sources */,
 				EE2628F529A9076900B008D2 /* String.swift in Sources */,
+				EE2628F929AAF2F500B008D2 /* WorkInternet.swift in Sources */,
 				EEF0D4A229A1605800B2EA43 /* Constants.swift in Sources */,
 				EE93E5D329A5449400A4750F /* TitleScreenPresenter.swift in Sources */,
 				EEA27BB829A81134001F0D71 /* ImageView.swift in Sources */,
 				EEA27BA829A66349001F0D71 /* CardModel.swift in Sources */,
-				EE2628F329A8F35E00B008D2 /* DataWork.swift in Sources */,
+				EE2628F329A8F35E00B008D2 /* WorkData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
