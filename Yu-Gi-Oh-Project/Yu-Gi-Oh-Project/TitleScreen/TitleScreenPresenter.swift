@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-class TitleScreenPresenter: TitleScreenPresenterInterface {
-    var interactorInterface: TitleScreenInteractorInterface
-    weak var viewModel: TitleScreenViewModel?
+final class TitleScreenPresenter: TitleScreenPresenterInterface {
+    internal var interactorInterface: TitleScreenInteractorInterface
+    internal weak var viewModel: TitleScreenViewModel?
     
     init(interactorInterface: TitleScreenInteractorInterface, viewModel: TitleScreenViewModel? = nil) {
         self.interactorInterface = interactorInterface

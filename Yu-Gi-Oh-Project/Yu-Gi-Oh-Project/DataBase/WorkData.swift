@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-class WorkData: TitleScreenInteractorWorkData {
-    weak var workError: TitleScreenWorkDataError?
+final class WorkData: TitleScreenInteractorWorkData {
+    internal weak var workError: TitleScreenWorkDataError?
     
     init(workError: TitleScreenWorkDataError? = nil) {
         self.workError = workError

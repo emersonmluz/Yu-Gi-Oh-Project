@@ -8,10 +8,10 @@
 import Foundation
 
 struct CardImages: Decodable {
-    var id: Int
-    var imageUrl: String
-    var imageUrlSmall: String
-    var imageUrlCropped: String
+    internal var id: Int
+    internal var imageUrl: String
+    internal var imageUrlSmall: String
+    internal var imageUrlCropped: String
     
     enum CodingKeys: String, CodingKey {
         case id

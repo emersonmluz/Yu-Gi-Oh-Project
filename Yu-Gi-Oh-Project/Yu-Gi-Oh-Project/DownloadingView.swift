@@ -8,8 +8,7 @@
 import UIKit
 import Lottie
 
-class DownloadingView: UIView {
-    
+final class DownloadingView: UIView {
     private lazy var animation: LottieAnimationView = {
         var animation = LottieAnimationView()
         animation = .init(name: Constants.AnimationName.downloadingAnimation)
@@ -42,18 +41,18 @@ class DownloadingView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    internal func configView() {
+    private func configView() {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = .white
         self.isHidden = true
     }
     
-    internal func addComponents() {
+    private func addComponents() {
         self.addSubview(animation)
         self.addSubview(infoLabel)
     }
     
-    internal func setConstraint() {
+    private func setConstraint() {
         NSLayoutConstraint.activate([
             animation.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -100),
             animation.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),

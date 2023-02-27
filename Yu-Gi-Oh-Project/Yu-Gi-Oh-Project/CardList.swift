@@ -8,5 +8,5 @@
 import Foundation
 
 struct CardList: Decodable {
-    var data: [CardModel]
+    internal var data: [CardModel]
 }

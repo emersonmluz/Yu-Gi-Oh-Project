@@ -8,7 +8,7 @@
 import Lottie
 import UIKit
 
-class LayoutTitleScreen: UIView {
+final class LayoutTitleScreen: UIView {
     internal lazy var background: LottieAnimationView = {
         var animation = LottieAnimationView()
         animation.translatesAutoresizingMaskIntoConstraints = false
@@ -20,7 +20,7 @@ class LayoutTitleScreen: UIView {
         return animation
     }()
     
-    lazy var titleImageView: UIImageView = {
+    private lazy var titleImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: Constants.ImageName.yuGiOhTitle)

@@ -8,8 +8,8 @@
 import UIKit
 import CoreData
 
-class DataBaseManager {
-    func loadData(completion: @escaping((NSError?) -> Void)) {
+final class DataBaseManager {
+    internal func loadData(completion: @escaping((NSError?) -> Void)) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.CoreData.entityName)
@@ -20,7 +20,7 @@ class DataBaseManager {
         }
     }
     
-    func save(cardModel: CardModel, completion: @escaping((NSError?) -> Void)) {
+    internal func save(cardModel: CardModel, completion: @escaping((NSError?) -> Void)) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: Constants.CoreData.entityName, in: managedContext)!
@@ -44,7 +44,7 @@ class DataBaseManager {
         }
     }
     
-    func deleteData(completion: @escaping((NSError?) -> Void)) {
+    internal func deleteData(completion: @escaping((NSError?) -> Void)) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         do {

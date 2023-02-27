@@ -8,8 +8,7 @@
 import UIKit
 import Lottie
 
-class TitleScreenViewController: UIViewController {
-    
+final class TitleScreenViewController: UIViewController {
     private let layoutView = LayoutTitleScreen()
     private let downloadingView = DownloadingView()
     private var presenterInterface: TitleScreenPresenterInterface

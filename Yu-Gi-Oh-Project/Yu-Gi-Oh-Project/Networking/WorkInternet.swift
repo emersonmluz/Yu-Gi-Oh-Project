@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WorkInternet: TitleScreenInteractorWorkInternet {
+final class WorkInternet: TitleScreenInteractorWorkInternet {
     func downloadImage(card: CardModel, completion: @escaping ((UIImage) -> Void)) {
         let cardImage = UIImageView()
         cardImage.loadFrom(URLAddress: card.images[0].imageUrl)

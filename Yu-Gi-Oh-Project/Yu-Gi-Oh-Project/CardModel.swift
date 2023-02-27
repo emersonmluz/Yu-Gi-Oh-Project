@@ -8,17 +8,17 @@
 import UIKit
 
 struct CardModel: Decodable {
-    var id: Int
-    var name: String
-    var type: String
-    var frameType: String
-    var description: String
-    var atk: Int?
-    var def: Int?
-    var level: Int?
-    var style: String
-    var attribute: String?
-    var images: [CardImages]
+    internal var id: Int
+    internal var name: String
+    internal var type: String
+    internal var frameType: String
+    internal var description: String
+    internal var atk: Int?
+    internal var def: Int?
+    internal var level: Int?
+    internal var style: String
+    internal var attribute: String?
+    internal var images: [CardImages]
     
     enum CodingKeys: String, CodingKey {
         case id

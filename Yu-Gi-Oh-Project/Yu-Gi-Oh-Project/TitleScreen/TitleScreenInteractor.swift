@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-class TitleScreenInteractor: TitleScreenInteractorInterface {
-    var api = ApiManager(url: Constants.NetWorking.urlCardList)
-    weak var output: TitleScreenInteractorOutput?
-    var workData: TitleScreenInteractorWorkData
-    var workInternet: TitleScreenInteractorWorkInternet
+final class TitleScreenInteractor: TitleScreenInteractorInterface {
+    internal var api = ApiManager(url: Constants.NetWorking.urlCardList)
+    internal weak var output: TitleScreenInteractorOutput?
+    internal var workData: TitleScreenInteractorWorkData
+    internal var workInternet: TitleScreenInteractorWorkInternet
     
     init(apiInput: ApiManager = ApiManager(url: Constants.NetWorking.urlCardList), output: TitleScreenInteractorOutput? = nil, workData: TitleScreenInteractorWorkData, workInternet: TitleScreenInteractorWorkInternet) {
         self.api = apiInput
