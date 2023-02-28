@@ -8,12 +8,14 @@
 import UIKit
 
 protocol TitleScreenPresenterInterface {
+    var cordinator: TitleScreenCoordinatorInterface? { get set }
     var interactorInterface: TitleScreenInteractorInterface { get }
     var viewModel: TitleScreenViewModel? { get set }
     func loadDataBase()
     func deleteDataBase()
     func registerTapGesture()
     func fetchData()
+    func goToSelectCharacter()
 }
 
 protocol TitleScreenInteractorInterface {
@@ -53,4 +55,10 @@ protocol TitleScreenViewModel: AnyObject {
     func registerTapGestureNavigation()
     func showSuccess()
     func showError()
+}
+
+protocol TitleScreenCoordinatorInterface: AnyObject {
+    var navigator: UINavigationController? { get set }
+    func start()
+    func goToSelectCharacter()
 }

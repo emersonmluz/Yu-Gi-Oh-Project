@@ -14,11 +14,9 @@ final class TitleScreenInteractor: TitleScreenInteractorInterface {
     internal var workData: TitleScreenInteractorWorkData
     internal var workInternet: TitleScreenInteractorWorkInternet
     
-    init(apiInput: ApiManager = ApiManager(url: Constants.NetWorking.urlCardList), output: TitleScreenInteractorOutput? = nil, workData: TitleScreenInteractorWorkData, workInternet: TitleScreenInteractorWorkInternet) {
-        self.api = apiInput
-        self.output = output
-        self.workData = workData
-        self.workInternet = workInternet
+    init() {
+        self.workData = WorkData()
+        self.workInternet = WorkInternet()
         self.workData.workError = self
     }
     

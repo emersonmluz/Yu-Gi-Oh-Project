@@ -11,10 +11,6 @@ import UIKit
 final class WorkData: TitleScreenInteractorWorkData {
     internal weak var workError: TitleScreenWorkDataError?
     
-    init(workError: TitleScreenWorkDataError? = nil) {
-        self.workError = workError
-    }
-    
     internal func saveData(data: CardModel) {
         dataBase.save(cardModel: data) { error in
             if error != nil {

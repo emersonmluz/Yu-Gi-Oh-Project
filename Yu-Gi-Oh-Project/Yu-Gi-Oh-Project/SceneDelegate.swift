@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private let navigator = UINavigationController()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -18,19 +19,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
-        
-        let rootViewController = TitleScreenViewController(presenterInterface:
-                TitleScreenPresenter (interactorInterface:
-                TitleScreenInteractor (workData: WorkData(), workInternet: WorkInternet())))
-        
-        let navigator = UINavigationController(rootViewController: rootViewController)
 
         let backImage = UIImage(systemName: Constants.SystemImageName.arrowShapeLeftFill)
         navigator.navigationBar.backIndicatorImage = backImage
         navigator.navigationBar.backIndicatorTransitionMaskImage = backImage
         UIBarButtonItem.appearance().tintColor = .link
         
+        let initialCordinator = Router()
+        initialCordinator.navigator = navigator
+        
         window?.rootViewController = navigator
+        initialCordinator.showTitleScreen(navigator: navigator)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

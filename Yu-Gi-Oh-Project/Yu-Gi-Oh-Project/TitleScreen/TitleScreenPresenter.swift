@@ -9,12 +9,13 @@ import Foundation
 import UIKit
 
 final class TitleScreenPresenter: TitleScreenPresenterInterface {
+    internal var cordinator: TitleScreenCoordinatorInterface?
     internal var interactorInterface: TitleScreenInteractorInterface
     internal weak var viewModel: TitleScreenViewModel?
     
-    init(interactorInterface: TitleScreenInteractorInterface, viewModel: TitleScreenViewModel? = nil) {
+    init(cordinator: TitleScreenCoordinatorInterface? = nil, interactorInterface: TitleScreenInteractorInterface) {
+        self.cordinator = cordinator
         self.interactorInterface = interactorInterface
-        self.viewModel = viewModel
         self.interactorInterface.output = self
     }
     
@@ -36,6 +37,10 @@ final class TitleScreenPresenter: TitleScreenPresenterInterface {
     
     internal func deleteDataBase() {
         interactorInterface.deleteDataBase()
+    }
+    
+    internal func goToSelectCharacter() {
+        cordinator?.goToSelectCharacter()
     }
 }
 

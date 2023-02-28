@@ -88,8 +88,8 @@ final class TitleScreenViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
-    @objc private func navigateToHomePage(_ sender: UITapGestureRecognizer) {
-        print("para próxima tela")
+    @objc private func navigateToSelectCharacter(_ sender: UITapGestureRecognizer) {
+        presenterInterface.goToSelectCharacter()
     }
     
     private func showAlert(title: String, message: String, preferredStyle: UIAlertController.Style, actionTitle: String, actionStyle: UIAlertAction.Style) -> UIAlertController {
@@ -110,7 +110,7 @@ extension TitleScreenViewController: TitleScreenViewModel {
     }
     
     func registerTapGestureNavigation() {
-        let touch = UITapGestureRecognizer(target: self, action: #selector(navigateToHomePage(_:)))
+        let touch = UITapGestureRecognizer(target: self, action: #selector(navigateToSelectCharacter(_:)))
         view.addGestureRecognizer(touch)
     }
     

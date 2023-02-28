@@ -10,6 +10,11 @@
 		EE2628F329A8F35E00B008D2 /* WorkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2628F229A8F35E00B008D2 /* WorkData.swift */; };
 		EE2628F529A9076900B008D2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2628F429A9076900B008D2 /* String.swift */; };
 		EE2628F929AAF2F500B008D2 /* WorkInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2628F829AAF2F500B008D2 /* WorkInternet.swift */; };
+		EE2628FB29AC55D600B008D2 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2628FA29AC55D600B008D2 /* Router.swift */; };
+		EE2628FD29AC57D900B008D2 /* TitleScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2628FC29AC57D900B008D2 /* TitleScreenCoordinator.swift */; };
+		EE26290029AC5F1100B008D2 /* SelectCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2628FF29AC5F1100B008D2 /* SelectCharacterViewController.swift */; };
+		EE26290229AC5F8900B008D2 /* SelectCharacterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26290129AC5F8900B008D2 /* SelectCharacterCoordinator.swift */; };
+		EE26290429AD99E300B008D2 /* SelectCharacterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26290329AD99E300B008D2 /* SelectCharacterProtocol.swift */; };
 		EE93E5D129A543C800A4750F /* TitleScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D029A543C800A4750F /* TitleScreenProtocol.swift */; };
 		EE93E5D329A5449400A4750F /* TitleScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D229A5449400A4750F /* TitleScreenPresenter.swift */; };
 		EE93E5D529A5472B00A4750F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D429A5472B00A4750F /* ApiManager.swift */; };
@@ -36,6 +41,11 @@
 		EE2628F229A8F35E00B008D2 /* WorkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkData.swift; sourceTree = "<group>"; };
 		EE2628F429A9076900B008D2 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		EE2628F829AAF2F500B008D2 /* WorkInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkInternet.swift; sourceTree = "<group>"; };
+		EE2628FA29AC55D600B008D2 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		EE2628FC29AC57D900B008D2 /* TitleScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenCoordinator.swift; sourceTree = "<group>"; };
+		EE2628FF29AC5F1100B008D2 /* SelectCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterViewController.swift; sourceTree = "<group>"; };
+		EE26290129AC5F8900B008D2 /* SelectCharacterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterCoordinator.swift; sourceTree = "<group>"; };
+		EE26290329AD99E300B008D2 /* SelectCharacterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterProtocol.swift; sourceTree = "<group>"; };
 		EE93E5D029A543C800A4750F /* TitleScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenProtocol.swift; sourceTree = "<group>"; };
 		EE93E5D229A5449400A4750F /* TitleScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenPresenter.swift; sourceTree = "<group>"; };
 		EE93E5D429A5472B00A4750F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -85,9 +95,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE2628FE29AC5EE000B008D2 /* SelectCharacter */ = {
+			isa = PBXGroup;
+			children = (
+				EE26290129AC5F8900B008D2 /* SelectCharacterCoordinator.swift */,
+				EE2628FF29AC5F1100B008D2 /* SelectCharacterViewController.swift */,
+				EE26290329AD99E300B008D2 /* SelectCharacterProtocol.swift */,
+			);
+			name = SelectCharacter;
+			sourceTree = "<group>";
+		};
 		EE93E5C629A5396000A4750F /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				EE2628FE29AC5EE000B008D2 /* SelectCharacter */,
 				EE93E5C829A53A2800A4750F /* TitleScreen */,
 			);
 			name = Features;
@@ -105,6 +126,7 @@
 		EE93E5C829A53A2800A4750F /* TitleScreen */ = {
 			isa = PBXGroup;
 			children = (
+				EE2628FC29AC57D900B008D2 /* TitleScreenCoordinator.swift */,
 				EEF0D48F29A13E4200B2EA43 /* TitleScreenViewController.swift */,
 				EE93E5D229A5449400A4750F /* TitleScreenPresenter.swift */,
 				EE93E5D629A54AD400A4750F /* TitleScreenInteractor.swift */,
@@ -121,6 +143,7 @@
 				EEA27BBF29A820F8001F0D71 /* DataBase */,
 				EE93E5CB29A53AA700A4750F /* Components */,
 				EEF0D4A129A1605800B2EA43 /* Constants.swift */,
+				EE2628FA29AC55D600B008D2 /* Router.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -322,13 +345,18 @@
 				EE93E5D529A5472B00A4750F /* ApiManager.swift in Sources */,
 				EEA27BA629A66291001F0D71 /* CardList.swift in Sources */,
 				EEF0D48E29A13E4200B2EA43 /* SceneDelegate.swift in Sources */,
+				EE2628FB29AC55D600B008D2 /* Router.swift in Sources */,
+				EE2628FD29AC57D900B008D2 /* TitleScreenCoordinator.swift in Sources */,
+				EE26290029AC5F1100B008D2 /* SelectCharacterViewController.swift in Sources */,
 				EE2628F529A9076900B008D2 /* String.swift in Sources */,
 				EE2628F929AAF2F500B008D2 /* WorkInternet.swift in Sources */,
+				EE26290229AC5F8900B008D2 /* SelectCharacterCoordinator.swift in Sources */,
 				EEF0D4A229A1605800B2EA43 /* Constants.swift in Sources */,
 				EE93E5D329A5449400A4750F /* TitleScreenPresenter.swift in Sources */,
 				EEA27BB829A81134001F0D71 /* ImageView.swift in Sources */,
 				EEA27BA829A66349001F0D71 /* CardModel.swift in Sources */,
 				EE2628F329A8F35E00B008D2 /* WorkData.swift in Sources */,
+				EE26290429AD99E300B008D2 /* SelectCharacterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
