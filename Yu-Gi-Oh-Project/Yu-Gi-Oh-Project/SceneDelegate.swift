@@ -28,8 +28,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let initialCordinator = Router()
         initialCordinator.navigator = navigator
         
-        window?.rootViewController = navigator
-        initialCordinator.showTitleScreen(navigator: navigator)
+        window?.rootViewController = initialCordinator.navigator
+        initialCordinator.showTitleScreen(navigator: initialCordinator.navigator ?? navigator)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
