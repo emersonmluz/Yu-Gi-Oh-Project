@@ -15,6 +15,7 @@
 		EE26290029AC5F1100B008D2 /* SelectCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2628FF29AC5F1100B008D2 /* SelectCharacterViewController.swift */; };
 		EE26290229AC5F8900B008D2 /* SelectCharacterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26290129AC5F8900B008D2 /* SelectCharacterCoordinator.swift */; };
 		EE26290429AD99E300B008D2 /* SelectCharacterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26290329AD99E300B008D2 /* SelectCharacterProtocol.swift */; };
+		EE26290B29AFA51C00B008D2 /* TouchScreen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE26290A29AFA51C00B008D2 /* TouchScreen.mp3 */; };
 		EE93E5D129A543C800A4750F /* TitleScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D029A543C800A4750F /* TitleScreenProtocol.swift */; };
 		EE93E5D329A5449400A4750F /* TitleScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D229A5449400A4750F /* TitleScreenPresenter.swift */; };
 		EE93E5D529A5472B00A4750F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D429A5472B00A4750F /* ApiManager.swift */; };
@@ -46,6 +47,7 @@
 		EE2628FF29AC5F1100B008D2 /* SelectCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterViewController.swift; sourceTree = "<group>"; };
 		EE26290129AC5F8900B008D2 /* SelectCharacterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterCoordinator.swift; sourceTree = "<group>"; };
 		EE26290329AD99E300B008D2 /* SelectCharacterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterProtocol.swift; sourceTree = "<group>"; };
+		EE26290A29AFA51C00B008D2 /* TouchScreen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TouchScreen.mp3; sourceTree = "<group>"; };
 		EE93E5D029A543C800A4750F /* TitleScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenProtocol.swift; sourceTree = "<group>"; };
 		EE93E5D229A5449400A4750F /* TitleScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenPresenter.swift; sourceTree = "<group>"; };
 		EE93E5D429A5472B00A4750F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 			name = SelectCharacter;
 			sourceTree = "<group>";
 		};
+		EE26290929AFA02900B008D2 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				EE26290A29AFA51C00B008D2 /* TouchScreen.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		EE93E5C629A5396000A4750F /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +150,7 @@
 			children = (
 				EEA27BA429A661EF001F0D71 /* Models */,
 				EE93E5CA29A53A9600A4750F /* Networking */,
-				EEA27BBF29A820F8001F0D71 /* DataBase */,
+				EEA27BBF29A820F8001F0D71 /* DataWork */,
 				EE93E5CB29A53AA700A4750F /* Components */,
 				EEF0D4A129A1605800B2EA43 /* Constants.swift */,
 				EE2628FA29AC55D600B008D2 /* Router.swift */,
@@ -176,13 +186,13 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		EEA27BBF29A820F8001F0D71 /* DataBase */ = {
+		EEA27BBF29A820F8001F0D71 /* DataWork */ = {
 			isa = PBXGroup;
 			children = (
 				EEA27BC029A82123001F0D71 /* DataBaseManager.swift */,
 				EE2628F229A8F35E00B008D2 /* WorkData.swift */,
 			);
-			path = DataBase;
+			path = DataWork;
 			sourceTree = "<group>";
 		};
 		EEF0D47F29A13E4200B2EA43 = {
@@ -209,6 +219,7 @@
 				EE93E5C929A53A8300A4750F /* Helper */,
 				EE93E5C729A5396B00A4750F /* Extensions */,
 				EE93E5C629A5396000A4750F /* Features */,
+				EE26290929AFA02900B008D2 /* Sounds */,
 				EEF0D48B29A13E4200B2EA43 /* AppDelegate.swift */,
 				EEF0D48D29A13E4200B2EA43 /* SceneDelegate.swift */,
 				EEF0D49629A13E4400B2EA43 /* LaunchScreen.storyboard */,
@@ -279,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE26290B29AFA51C00B008D2 /* TouchScreen.mp3 in Resources */,
 				EEF0D49829A13E4400B2EA43 /* LaunchScreen.storyboard in Resources */,
 				EEF0D49529A13E4400B2EA43 /* Assets.xcassets in Resources */,
 			);

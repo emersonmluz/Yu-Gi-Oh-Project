@@ -7,11 +7,13 @@
 
 import UIKit
 import Lottie
+import AVFoundation
 
 final class TitleScreenViewController: UIViewController {
     private let layoutView = LayoutTitleScreen()
     private let downloadingView = DownloadingView()
     private var presenterInterface: TitleScreenPresenterInterface
+    private var touchScreenSound: AVAudioPlayer?
     
     init(presenterInterface: TitleScreenPresenterInterface) {
         self.presenterInterface = presenterInterface
@@ -35,6 +37,7 @@ final class TitleScreenViewController: UIViewController {
     private func configData() {
         presenterInterface.loadDataBase()
         presenterInterface.viewModel = self
+        presenterInterface.fetchSounds()
     }
     
     private func configUI() {
@@ -89,6 +92,7 @@ final class TitleScreenViewController: UIViewController {
     }
     
     @objc private func navigateToSelectCharacter(_ sender: UITapGestureRecognizer) {
+        touchScreenSound?.play()
         presenterInterface.goToSelectCharacter()
     }
     
@@ -117,21 +121,34 @@ extension TitleScreenViewController: TitleScreenViewModel {
     func showSuccess() {
         registerTapGesture()
         downloadingView.stopDownload()
-        let alert = showAlert(title: Constants.TitleScreenStrings.alertSuccessTitle,
-                 message: Constants.TitleScreenStrings.alertSuccessMessage,
-                 preferredStyle: .alert,
-                 actionTitle: Constants.TitleScreenStrings.alertSuccessActionTitle,
-                 actionStyle: .default)
-        self.present(alert, animated: true)
+        self.present(showAlert(title: Constants.TitleScreenStrings.alertSuccessTitle,
+                               message: Constants.TitleScreenStrings.alertSuccessMessage,
+                               preferredStyle: .alert,
+                               actionTitle: Constants.TitleScreenStrings.alertSuccessActionTitle,
+                               actionStyle: .default),
+                     animated: true)
+    }
+    
+    func fetchSoundsSuccess(file: AVAudioPlayer) {
+        touchScreenSound = file
     }
     
     func showError() {
         downloadingView.stopDownload()
-        let alert = showAlert(title: Constants.TitleScreenStrings.alertErrorTitle,
-                 message: Constants.TitleScreenStrings.alertErrorMessage,
-                 preferredStyle: .alert,
-                 actionTitle: Constants.TitleScreenStrings.alertErrorActionTitle,
-                 actionStyle: .default)
-        self.present(alert, animated: true)
+        self.present(showAlert(title: Constants.TitleScreenStrings.alertErrorTitle,
+                               message: Constants.TitleScreenStrings.alertErrorMessage,
+                               preferredStyle: .alert,
+                               actionTitle: Constants.TitleScreenStrings.alertErrorActionTitle,
+                               actionStyle: .default),
+                     animated: true)
+    }
+    
+    func audioNotFound() {
+        self.present(showAlert(title: Constants.TitleScreenStrings.audioNotFoundTitle,
+                               message: Constants.TitleScreenStrings.audioNotFoundMessage,
+                               preferredStyle: .alert,
+                               actionTitle: Constants.TitleScreenStrings.audioNotFoundActionTitle,
+                               actionStyle: .default),
+                     animated: true)
     }
 }

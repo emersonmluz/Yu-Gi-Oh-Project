@@ -41,6 +41,9 @@ class Constants {
         static let alertSuccessTitle = "Tudo pronto!"
         static let alertSuccessMessage = "Download fnalizado com sucesso."
         static let alertSuccessActionTitle = "Continuar"
+        static let audioNotFoundTitle = "Erro!"
+        static let audioNotFoundMessage = "Um ou mais arquivos de áudio não foram encontrados."
+        static let audioNotFoundActionTitle = "Entendi"
     }
     
     struct NetWorking {
@@ -62,6 +65,16 @@ class Constants {
             static let style = "style"
             static let attribute = "attribute"
             static let image = "image"
+        }
+    }
+    
+    struct Sounds {
+        struct Names {
+            static let touchScreen = "TouchScreen"
+        }
+        
+        struct Format {
+            static let mp3 = "mp3"
         }
     }
 }

@@ -5,7 +5,7 @@
 //  Created by Émerson M Luz on 24/02/23.
 //
 
-import Foundation
+import AVFoundation
 import UIKit
 
 final class WorkData: TitleScreenInteractorWorkData {
@@ -32,6 +32,19 @@ final class WorkData: TitleScreenInteractorWorkData {
             if error != nil {
                 self.workError?.workError()
             }
+        }
+    }
+    
+    internal func loadSounds(completion: @escaping ((AVAudioPlayer?) -> Void)) {
+        do {
+            guard let url = Bundle.main.url(forResource: Constants.Sounds.Names.touchScreen, withExtension: Constants.Sounds.Format.mp3) else {
+                completion(nil)
+                return
+            }
+            let audioFile = try AVAudioPlayer.init(contentsOf: url)
+            completion(audioFile)
+        } catch {
+            completion(nil)
         }
     }
 }

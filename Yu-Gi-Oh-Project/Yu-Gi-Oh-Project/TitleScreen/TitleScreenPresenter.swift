@@ -5,7 +5,6 @@
 //  Created by Émerson M Luz on 21/02/23.
 //
 
-import Foundation
 import UIKit
 
 final class TitleScreenPresenter: TitleScreenPresenterInterface {
@@ -41,6 +40,16 @@ final class TitleScreenPresenter: TitleScreenPresenterInterface {
     
     internal func goToSelectCharacter() {
         cordinator?.goToSelectCharacter()
+    }
+    
+    internal func fetchSounds() {
+        interactorInterface.loadSounds() { audio in
+            if let audio = audio {
+                self.viewModel?.fetchSoundsSuccess(file: audio)
+            } else {
+                self.viewModel?.audioNotFound()
+            }
+        }
     }
 }
 

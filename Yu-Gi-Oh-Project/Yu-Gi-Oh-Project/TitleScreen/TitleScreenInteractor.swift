@@ -5,8 +5,8 @@
 //  Created by Émerson M Luz on 21/02/23.
 //
 
-import Foundation
 import UIKit
+import AVFoundation
 
 final class TitleScreenInteractor: TitleScreenInteractorInterface {
     internal var api = ApiManager(url: Constants.NetWorking.urlCardList)
@@ -41,6 +41,12 @@ final class TitleScreenInteractor: TitleScreenInteractorInterface {
     internal func downloadImage(card: CardModel, completion: @escaping((UIImage) -> Void)) {
         workInternet.downloadImage(card: card) { image in
             completion(image)
+        }
+    }
+    
+    internal func loadSounds(completion: @escaping((AVAudioPlayer?) -> Void)) {
+        workData.loadSounds() { audio in
+            completion(audio)
         }
     }
 }

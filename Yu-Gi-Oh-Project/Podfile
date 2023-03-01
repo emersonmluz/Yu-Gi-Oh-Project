@@ -1,0 +1,11 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Yu-Gi-Oh-Project' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Yu-Gi-Oh-Project
+	pod 'Alamofire'
+	pod 'lottie-ios'
+end

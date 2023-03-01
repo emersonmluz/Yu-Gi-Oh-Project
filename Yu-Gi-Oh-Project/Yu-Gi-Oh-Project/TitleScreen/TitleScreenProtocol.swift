@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 protocol TitleScreenPresenterInterface {
     var cordinator: TitleScreenCoordinatorInterface? { get set }
@@ -16,6 +17,7 @@ protocol TitleScreenPresenterInterface {
     func registerTapGesture()
     func fetchData()
     func goToSelectCharacter()
+    func fetchSounds()
 }
 
 protocol TitleScreenInteractorInterface {
@@ -28,6 +30,7 @@ protocol TitleScreenInteractorInterface {
     func loadDataBase()
     func deleteDataBase()
     func downloadImage(card: CardModel, completion: @escaping((UIImage) -> Void))
+    func loadSounds(completion: @escaping((AVAudioPlayer?) -> Void))
 }
 
 protocol TitleScreenInteractorOutput: AnyObject {
@@ -40,6 +43,7 @@ protocol TitleScreenInteractorWorkData {
     func saveData(data: CardModel)
     func loadData()
     func deleteData()
+    func loadSounds(completion: @escaping((AVAudioPlayer?) -> Void))
 }
 
 protocol TitleScreenWorkDataError: AnyObject {
@@ -55,6 +59,8 @@ protocol TitleScreenViewModel: AnyObject {
     func registerTapGestureNavigation()
     func showSuccess()
     func showError()
+    func audioNotFound()
+    func fetchSoundsSuccess(file: AVAudioPlayer)
 }
 
 protocol TitleScreenCoordinatorInterface: AnyObject {
