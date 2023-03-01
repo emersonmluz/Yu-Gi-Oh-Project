@@ -43,11 +43,11 @@ final class TitleScreenPresenter: TitleScreenPresenterInterface {
     }
     
     internal func fetchSounds() {
-        interactorInterface.loadSounds() { audio in
+        interactorInterface.loadSounds() { [weak self] audio in
             if let audio = audio {
-                self.viewModel?.fetchSoundsSuccess(file: audio)
+                self?.viewModel?.fetchSoundsSuccess(file: audio)
             } else {
-                self.viewModel?.audioNotFound()
+                self?.viewModel?.audioNotFound()
             }
         }
     }
