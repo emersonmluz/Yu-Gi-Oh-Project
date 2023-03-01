@@ -27,23 +27,36 @@ class Constants {
         static let arrowShapeLeftFill = "arrowshape.left.fill"
     }
     
-    struct TitleScreenStrings {
-        static let touchLabelText = "Toque na tela para continuar"
-        static let subtitleLabelText = "É hora do duelo!"
-        static let downloadAlertTitle = "Atenção!"
-        static let downloadAlertMessage = "É necessário baixar os dados do jogo, certifique-se de que está usando wi-fi."
-        static let titleActionCancel = "Cancelar"
-        static let titleActionDefault = "Baixar"
-        static let alertErrorTitle = "Ops!"
-        static let alertErrorMessage = "Algo deu errado, tente novamente mais tarde."
-        static let alertErrorActionTitle = "Entendi"
-        static let downloadingText = "Baixando arquivos... aguarde! \nIsso pode demorar alguns minutos."
-        static let alertSuccessTitle = "Tudo pronto!"
-        static let alertSuccessMessage = "Download fnalizado com sucesso."
-        static let alertSuccessActionTitle = "Continuar"
-        static let audioNotFoundTitle = "Erro!"
-        static let audioNotFoundMessage = "Um ou mais arquivos de áudio não foram encontrados."
-        static let audioNotFoundActionTitle = "Entendi"
+    struct TextMessage {
+        struct TitleMessage {
+            static let subtitleGame = "É hora do duelo!"
+            static let atention = "Atenção!"
+            static let ops = "Ops!"
+            static let ready = "Tudo pronto!"
+            static let erro = "Erro!"
+        }
+        
+        struct ComponentMessage {
+            static let download = "Baixar"
+            static let cancel = "Cancelar"
+            static let understood = "Entendi"
+            static let continueMessage = "Continuar"
+        }
+        
+        struct SuccessMessage {
+            static let downloadFinished = "Download fnalizado com sucesso."
+        }
+        
+        struct FailedMessage {
+            static let somethingErro = "Algo deu errado, tente novamente mais tarde."
+            static let audioNotFound = "Um ou mais arquivos de áudio não foram encontrados."
+        }
+        
+        struct InfoMessage {
+            static let touchScreenMessage = "Toque na tela para continuar"
+            static let downloadIsNecessary = "É necessário baixar os dados do jogo, certifique-se de que está usando wi-fi."
+            static let downloadingData = "Baixando arquivos... aguarde! \nIsso pode demorar alguns minutos."
+        }
     }
     
     struct NetWorking {
@@ -71,6 +84,7 @@ class Constants {
     struct Sounds {
         struct Names {
             static let touchScreen = "TouchScreen"
+            static let backgroundMusic = "BackgroundMusic"
         }
         
         struct Format {

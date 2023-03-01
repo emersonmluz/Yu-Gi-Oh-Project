@@ -11,6 +11,7 @@ final class TitleScreenPresenter: TitleScreenPresenterInterface {
     internal var cordinator: TitleScreenCoordinatorInterface?
     internal var interactorInterface: TitleScreenInteractorInterface
     internal weak var viewModel: TitleScreenViewModel?
+    private var audioFileNumber = 0
     
     init(cordinator: TitleScreenCoordinatorInterface? = nil, interactorInterface: TitleScreenInteractorInterface) {
         self.cordinator = cordinator

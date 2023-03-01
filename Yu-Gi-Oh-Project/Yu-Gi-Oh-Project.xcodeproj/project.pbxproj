@@ -16,6 +16,7 @@
 		EE26290229AC5F8900B008D2 /* SelectCharacterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26290129AC5F8900B008D2 /* SelectCharacterCoordinator.swift */; };
 		EE26290429AD99E300B008D2 /* SelectCharacterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26290329AD99E300B008D2 /* SelectCharacterProtocol.swift */; };
 		EE26290B29AFA51C00B008D2 /* TouchScreen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE26290A29AFA51C00B008D2 /* TouchScreen.mp3 */; };
+		EE26290D29B0033800B008D2 /* BackgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE26290C29B0033800B008D2 /* BackgroundMusic.mp3 */; };
 		EE93E5D129A543C800A4750F /* TitleScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D029A543C800A4750F /* TitleScreenProtocol.swift */; };
 		EE93E5D329A5449400A4750F /* TitleScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D229A5449400A4750F /* TitleScreenPresenter.swift */; };
 		EE93E5D529A5472B00A4750F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93E5D429A5472B00A4750F /* ApiManager.swift */; };
@@ -48,6 +49,7 @@
 		EE26290129AC5F8900B008D2 /* SelectCharacterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterCoordinator.swift; sourceTree = "<group>"; };
 		EE26290329AD99E300B008D2 /* SelectCharacterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterProtocol.swift; sourceTree = "<group>"; };
 		EE26290A29AFA51C00B008D2 /* TouchScreen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TouchScreen.mp3; sourceTree = "<group>"; };
+		EE26290C29B0033800B008D2 /* BackgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BackgroundMusic.mp3; sourceTree = "<group>"; };
 		EE93E5D029A543C800A4750F /* TitleScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenProtocol.swift; sourceTree = "<group>"; };
 		EE93E5D229A5449400A4750F /* TitleScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenPresenter.swift; sourceTree = "<group>"; };
 		EE93E5D429A5472B00A4750F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				EE26290A29AFA51C00B008D2 /* TouchScreen.mp3 */,
+				EE26290C29B0033800B008D2 /* BackgroundMusic.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE26290B29AFA51C00B008D2 /* TouchScreen.mp3 in Resources */,
+				EE26290D29B0033800B008D2 /* BackgroundMusic.mp3 in Resources */,
 				EEF0D49829A13E4400B2EA43 /* LaunchScreen.storyboard in Resources */,
 				EEF0D49529A13E4400B2EA43 /* Assets.xcassets in Resources */,
 			);

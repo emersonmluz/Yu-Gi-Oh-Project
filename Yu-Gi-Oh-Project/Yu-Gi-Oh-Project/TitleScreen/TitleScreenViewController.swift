@@ -14,6 +14,7 @@ final class TitleScreenViewController: UIViewController {
     private let downloadingView = DownloadingView()
     private var presenterInterface: TitleScreenPresenterInterface
     private var touchScreenSound: AVAudioPlayer?
+    private var backgroundMusic: AVAudioPlayer?
     
     init(presenterInterface: TitleScreenPresenterInterface) {
         self.presenterInterface = presenterInterface
@@ -38,6 +39,10 @@ final class TitleScreenViewController: UIViewController {
         presenterInterface.loadDataBase()
         presenterInterface.viewModel = self
         presenterInterface.fetchSounds()
+        DispatchQueue.main.async {
+            self.backgroundMusic?.numberOfLoops = -1
+            self.backgroundMusic?.play()
+        }
     }
     
     private func configUI() {
@@ -76,12 +81,12 @@ final class TitleScreenViewController: UIViewController {
     }
     
     @objc private func downloadAlert(_ sender: UITapGestureRecognizer) {
-        let alert = showAlert(title: Constants.TitleScreenStrings.downloadAlertTitle,
-                                   message: Constants.TitleScreenStrings.downloadAlertMessage,
+        let alert = showAlert(title: Constants.TextMessage.TitleMessage.atention,
+                              message: Constants.TextMessage.InfoMessage.downloadIsNecessary,
                                    preferredStyle: .alert,
-                                   actionTitle: Constants.TitleScreenStrings.titleActionCancel,
+                              actionTitle: Constants.TextMessage.ComponentMessage.cancel,
                                    actionStyle: .destructive)
-        alert.addAction(UIAlertAction(title: Constants.TitleScreenStrings.titleActionDefault, style: .default) {
+        alert.addAction(UIAlertAction(title: Constants.TextMessage.ComponentMessage.download, style: .default) {
             _ in
             self.downloadingView.startDownload()
             self.downloadingView.isHidden = false
@@ -92,6 +97,7 @@ final class TitleScreenViewController: UIViewController {
     }
     
     @objc private func navigateToSelectCharacter(_ sender: UITapGestureRecognizer) {
+        backgroundMusic?.stop()
         touchScreenSound?.play()
         presenterInterface.goToSelectCharacter()
     }
@@ -121,33 +127,37 @@ extension TitleScreenViewController: TitleScreenViewModel {
     func showSuccess() {
         registerTapGesture()
         downloadingView.stopDownload()
-        self.present(showAlert(title: Constants.TitleScreenStrings.alertSuccessTitle,
-                               message: Constants.TitleScreenStrings.alertSuccessMessage,
+        self.present(showAlert(title: Constants.TextMessage.TitleMessage.ready,
+                               message: Constants.TextMessage.SuccessMessage.downloadFinished,
                                preferredStyle: .alert,
-                               actionTitle: Constants.TitleScreenStrings.alertSuccessActionTitle,
+                               actionTitle: Constants.TextMessage.ComponentMessage.continueMessage,
+                               actionStyle: .default),
+                     animated: true)
+    }
+    
+    func showError() {
+        downloadingView.stopDownload()
+        self.present(showAlert(title: Constants.TextMessage.TitleMessage.ops,
+                               message: Constants.TextMessage.FailedMessage.somethingErro,
+                               preferredStyle: .alert,
+                               actionTitle: Constants.TextMessage.ComponentMessage.understood,
                                actionStyle: .default),
                      animated: true)
     }
     
     func fetchSoundsSuccess(file: AVAudioPlayer) {
-        touchScreenSound = file
-    }
-    
-    func showError() {
-        downloadingView.stopDownload()
-        self.present(showAlert(title: Constants.TitleScreenStrings.alertErrorTitle,
-                               message: Constants.TitleScreenStrings.alertErrorMessage,
-                               preferredStyle: .alert,
-                               actionTitle: Constants.TitleScreenStrings.alertErrorActionTitle,
-                               actionStyle: .default),
-                     animated: true)
+        if touchScreenSound == nil {
+            touchScreenSound = file
+        } else if backgroundMusic == nil {
+            backgroundMusic = file
+        }
     }
     
     func audioNotFound() {
-        self.present(showAlert(title: Constants.TitleScreenStrings.audioNotFoundTitle,
-                               message: Constants.TitleScreenStrings.audioNotFoundMessage,
+        self.present(showAlert(title: Constants.TextMessage.TitleMessage.erro,
+                               message: Constants.TextMessage.FailedMessage.audioNotFound,
                                preferredStyle: .alert,
-                               actionTitle: Constants.TitleScreenStrings.audioNotFoundActionTitle,
+                               actionTitle: Constants.TextMessage.ComponentMessage.understood,
                                actionStyle: .default),
                      animated: true)
     }

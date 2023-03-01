@@ -21,7 +21,7 @@ final class DownloadingView: UIView {
     
     private lazy var infoLabel: UILabel = {
         let label = UILabel()
-        label.text = Constants.TitleScreenStrings.downloadingText
+        label.text = Constants.TextMessage.InfoMessage.downloadingData
         label.font = UIFont(name: Constants.FontName.arial, size: 20)
         label.numberOfLines = 0
         label.textAlignment = .center

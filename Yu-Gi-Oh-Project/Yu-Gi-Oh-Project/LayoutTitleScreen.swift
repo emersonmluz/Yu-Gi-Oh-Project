@@ -31,7 +31,7 @@ final class LayoutTitleScreen: UIView {
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = Constants.TitleScreenStrings.subtitleLabelText
+        label.text = Constants.TextMessage.TitleMessage.subtitleGame
         label.font = UIFont(name: Constants.FontName.impact, size: 40)
         label.numberOfLines = 1
         label.textAlignment = .center
@@ -44,7 +44,7 @@ final class LayoutTitleScreen: UIView {
     private lazy var touchLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = Constants.TitleScreenStrings.touchLabelText
+        label.text = Constants.TextMessage.InfoMessage.touchScreenMessage
         label.font = UIFont(name: Constants.FontName.arial, size: 25)
         label.numberOfLines = 0
         label.textAlignment = .center
