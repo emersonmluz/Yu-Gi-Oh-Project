@@ -17,7 +17,8 @@ protocol TitleScreenPresenterInterface {
     func registerTapGesture()
     func fetchData()
     func goToSelectCharacter()
-    func fetchSounds()
+    func fetchTouchScreenSound()
+    func fetchBackgroundMusic()
 }
 
 protocol TitleScreenInteractorInterface {
@@ -30,7 +31,8 @@ protocol TitleScreenInteractorInterface {
     func loadDataBase()
     func deleteDataBase()
     func downloadImage(card: CardModel, completion: @escaping((UIImage) -> Void))
-    func loadSounds(completion: @escaping((AVAudioPlayer?) -> Void))
+    func loadTouchScreenSound(completion: @escaping((AVAudioPlayer?) -> Void))
+    func loadBackgroundMusic(completion: @escaping((AVAudioPlayer?) -> Void))
 }
 
 protocol TitleScreenInteractorOutput: AnyObject {
@@ -43,7 +45,8 @@ protocol TitleScreenInteractorWorkData {
     func saveData(data: CardModel)
     func loadData()
     func deleteData()
-    func loadSounds(completion: @escaping((AVAudioPlayer?) -> Void))
+    func loadTouchScreenSound(completion: @escaping((AVAudioPlayer?) -> Void))
+    func loadBackgroundMusic(completion: @escaping((AVAudioPlayer?) -> Void))
 }
 
 protocol TitleScreenWorkDataError: AnyObject {
@@ -60,7 +63,8 @@ protocol TitleScreenViewModel: AnyObject {
     func showSuccess()
     func showError()
     func audioNotFound()
-    func fetchSoundsSuccess(file: AVAudioPlayer)
+    func fetchTouchScreenSoundsSuccess(file: AVAudioPlayer)
+    func fetchBackgroundMusicSuccess(file: AVAudioPlayer)
 }
 
 protocol TitleScreenCoordinatorInterface: AnyObject {

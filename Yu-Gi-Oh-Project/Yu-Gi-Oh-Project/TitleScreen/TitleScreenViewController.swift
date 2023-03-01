@@ -38,7 +38,8 @@ final class TitleScreenViewController: UIViewController {
     private func configData() {
         presenterInterface.loadDataBase()
         presenterInterface.viewModel = self
-        presenterInterface.fetchSounds()
+        presenterInterface.fetchTouchScreenSound()
+        presenterInterface.fetchBackgroundMusic()
         DispatchQueue.main.async {
             self.backgroundMusic?.numberOfLoops = -1
             self.backgroundMusic?.play()
@@ -145,12 +146,12 @@ extension TitleScreenViewController: TitleScreenViewModel {
                      animated: true)
     }
     
-    func fetchSoundsSuccess(file: AVAudioPlayer) {
-        if touchScreenSound == nil {
-            touchScreenSound = file
-        } else if backgroundMusic == nil {
-            backgroundMusic = file
-        }
+    func fetchTouchScreenSoundsSuccess(file: AVAudioPlayer) {
+        touchScreenSound = file
+    }
+    
+    func fetchBackgroundMusicSuccess(file: AVAudioPlayer) {
+        backgroundMusic = file
     }
     
     func audioNotFound() {

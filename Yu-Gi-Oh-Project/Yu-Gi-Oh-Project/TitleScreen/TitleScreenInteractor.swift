@@ -44,8 +44,14 @@ final class TitleScreenInteractor: TitleScreenInteractorInterface {
         }
     }
     
-    internal func loadSounds(completion: @escaping((AVAudioPlayer?) -> Void)) {
-        workData.loadSounds() { audio in
+    internal func loadTouchScreenSound(completion: @escaping((AVAudioPlayer?) -> Void)) {
+        workData.loadTouchScreenSound() { audio in
+            completion(audio)
+        }
+    }
+    
+    internal func loadBackgroundMusic(completion: @escaping ((AVAudioPlayer?) -> Void)) {
+        workData.loadBackgroundMusic() { audio in
             completion(audio)
         }
     }

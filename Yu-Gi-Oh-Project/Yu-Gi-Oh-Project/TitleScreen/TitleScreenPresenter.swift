@@ -43,10 +43,20 @@ final class TitleScreenPresenter: TitleScreenPresenterInterface {
         cordinator?.goToSelectCharacter()
     }
     
-    internal func fetchSounds() {
-        interactorInterface.loadSounds() { [weak self] audio in
+    internal func fetchTouchScreenSound() {
+        interactorInterface.loadTouchScreenSound() { [weak self] audio in
             if let audio = audio {
-                self?.viewModel?.fetchSoundsSuccess(file: audio)
+                self?.viewModel?.fetchTouchScreenSoundsSuccess(file: audio)
+            } else {
+                self?.viewModel?.audioNotFound()
+            }
+        }
+    }
+    
+    internal func fetchBackgroundMusic() {
+        interactorInterface.loadBackgroundMusic() { [weak self] audio in
+            if let audio = audio {
+                self?.viewModel?.fetchBackgroundMusicSuccess(file: audio)
             } else {
                 self?.viewModel?.audioNotFound()
             }

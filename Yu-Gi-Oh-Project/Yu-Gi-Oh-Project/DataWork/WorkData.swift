@@ -35,14 +35,7 @@ final class WorkData: TitleScreenInteractorWorkData {
         }
     }
     
-    internal func loadSounds(completion: @escaping ((AVAudioPlayer?) -> Void)) {
-        loadTouchScreenSound(completion: completion)
-        DispatchQueue.main.async {
-            self.loadBackgroundMusic(completion: completion)
-        }
-    }
-    
-    private func loadTouchScreenSound(completion: @escaping((AVAudioPlayer?) -> Void)) {
+    internal func loadTouchScreenSound(completion: @escaping ((AVAudioPlayer?) -> Void)) {
         do {
             guard let url = Bundle.main.url(forResource: Constants.Sounds.Names.touchScreen, withExtension: Constants.Sounds.Format.mp3) else {
                 completion(nil)
@@ -55,7 +48,7 @@ final class WorkData: TitleScreenInteractorWorkData {
         }
     }
     
-    private func loadBackgroundMusic(completion: @escaping((AVAudioPlayer?) -> Void)) {
+    internal func loadBackgroundMusic(completion: @escaping((AVAudioPlayer?) -> Void)) {
         do {
             guard let url = Bundle.main.url(forResource: Constants.Sounds.Names.backgroundMusic, withExtension: Constants.Sounds.Format.mp3) else {
                 completion(nil)
