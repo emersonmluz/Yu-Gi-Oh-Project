@@ -10,11 +10,16 @@ import Lottie
 import AVFoundation
 
 final class TitleScreenViewController: UIViewController {
+    
+    // MARK: - Variáveis
+    
     private let layoutView = LayoutTitleScreen()
     private let downloadingView = DownloadingView()
     private var presenterInterface: TitleScreenPresenterInterface
     private var touchScreenSound: AVAudioPlayer?
     private var backgroundMusic: AVAudioPlayer?
+    
+    // MARK: - Métodos iniciais
     
     init(presenterInterface: TitleScreenPresenterInterface) {
         self.presenterInterface = presenterInterface
@@ -34,6 +39,8 @@ final class TitleScreenViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    // MARK: - Métodos
     
     private func configData() {
         presenterInterface.loadDataBase()
@@ -113,7 +120,12 @@ final class TitleScreenViewController: UIViewController {
     }
 }
 
+// MARK: - Extension
+
 extension TitleScreenViewController: TitleScreenViewModel {
+    
+    // MARK: - Retorno de ViewModel
+    
     func registerTapGestureDownloadAlert() {
         let touch = UITapGestureRecognizer(target: self, action: #selector(downloadAlert(_:)))
         view.addGestureRecognizer(touch)
